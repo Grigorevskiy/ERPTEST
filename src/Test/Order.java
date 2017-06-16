@@ -68,5 +68,4 @@ driver.switchTo().alert().accept();
         driver.navigate().to("https://live.easyerp.com/#easyErp/order/list");
         Thread.sleep(2000);
     }
-
 }

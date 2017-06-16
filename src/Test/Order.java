@@ -2,11 +2,8 @@ package Test;
 import BaseTest.BaseTest;
 import Methods.LoginEasyErp;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
-
 
 
 public class Order extends BaseTest  {
@@ -58,9 +55,7 @@ driver.switchTo().alert().accept();
         Thread.sleep(5000);
         driver.findElement(By.xpath("//div[2]/table/tbody/tr[9]/td[2]")).click();
         Thread.sleep(2000);
-
         driver.findElement(By.xpath("//div[2]/div[2]/div/fieldset/div[1]/ul/button")).click();
-
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[2]/div/div/form/fieldset/div[1]/ul/li[6]/div/button")).click();
         Thread.sleep(2000);
@@ -72,13 +67,5 @@ driver.switchTo().alert().accept();
         Thread.sleep(2000);
         driver.navigate().to("https://live.easyerp.com/#easyErp/order/list");
         Thread.sleep(2000);
-//
-//        driver.findElement(By.xpath("//div/fieldset/div[1]/ul/li/button[1]")).click();
-//        Thread.sleep(2000);
-//        driver.findElement(By.xpath("//form/fieldset/div[1]/ul[1]/li[3]/a")).click();
-//        Thread.sleep(2000);
-
-
-
     }
 }

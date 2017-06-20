@@ -145,7 +145,7 @@ public class PurchaseOrder extends BaseTest{
         driver.navigate().to(URL);
         Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("table"))));
-        driver.findElement(By.id("table")).click();r
+        driver.findElement(By.id("table")).click();
     }
 }
 

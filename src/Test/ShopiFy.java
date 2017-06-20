@@ -16,7 +16,7 @@ public class ShopiFy  extends BaseTest {
         driver.findElement(By.id("Password")).sendKeys("123456qwerty");
         Thread.sleep(2000);
         driver.findElement(By.name("commit")).click();
-        Thread.sleep(70000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//aside[@id='AppFrameAside']/div[2]/div[2]/div/div/nav/ul/li[2]/a/span")).click();
         driver.findElement(By.xpath("(//a[contains(text(),'Create order')])[2]")).click();
         driver.findElement(By.xpath("//input[@id='']")).clear();

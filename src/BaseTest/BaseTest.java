@@ -1,8 +1,12 @@
 package BaseTest;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import java.util.concurrent.TimeUnit;
@@ -12,6 +16,7 @@ public class BaseTest {
     public WebDriver driver;
     public String baseUrl = "https://easyerp-test.myshopify.com/admin";
     public static Integer seconds = 5000;
+    public  Wait<WebDriver> wait;
 
 
         @BeforeTest
@@ -20,8 +25,12 @@ public class BaseTest {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
+            wait = new WebDriverWait(driver, 5, 1000);
             driver.get(baseUrl);
+            WebElement myDynamicElement = driver.findElement(By.id("myDynamicElement"));
 //        Cookie name = new Cookie("_udr", "yIHd7OO2DC62Y64ouKEuZWX1h1iNEppvxewZU2Z7OVuGhPEQBflzhzZFchFvpX8JTI11U3f438qOr-hU4JefWOq7a7YZUGXoob\n" +
 //                "P8d-klA1-geWnyNuLkk5Ux4KIDWG4SbA4UlRKzA27iwDgIE97VTIh1TTfxuhWNFgTpMPRZeFfP3-Phi03JNMc6oACBr7nya-QXfGAc_RSjinIJsHJgyg\n" +
 //                "==");

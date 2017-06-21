@@ -21,7 +21,7 @@ public class BaseTest {
 
         @BeforeTest
         public void SetUp() {
-            System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
@@ -29,12 +29,6 @@ public class BaseTest {
             driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
             driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
             wait = new WebDriverWait(driver, 5, 1000);
-            driver.get(baseUrl);
-            WebElement myDynamicElement = driver.findElement(By.id("myDynamicElement"));
-//        Cookie name = new Cookie("_udr", "yIHd7OO2DC62Y64ouKEuZWX1h1iNEppvxewZU2Z7OVuGhPEQBflzhzZFchFvpX8JTI11U3f438qOr-hU4JefWOq7a7YZUGXoob\n" +
-//                "P8d-klA1-geWnyNuLkk5Ux4KIDWG4SbA4UlRKzA27iwDgIE97VTIh1TTfxuhWNFgTpMPRZeFfP3-Phi03JNMc6oACBr7nya-QXfGAc_RSjinIJsHJgyg\n" +
-//                "==");
-//        driver.manage().addCookie(name);
         }
 
         @AfterTest

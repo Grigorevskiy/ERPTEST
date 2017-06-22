@@ -1,5 +1,4 @@
 package Methods.CreatingOrders;
-import Methods.LoginEasyErp;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import java.io.InterruptedIOException;
@@ -8,10 +7,8 @@ import java.io.InterruptedIOException;
 
 public class CreatingOrder {
     public void CreateOrder(WebDriver driver) throws InterruptedException, InterruptedIOException {
-//        LoginEasyErp loginEasyErp = new LoginEasyErp();
-//        loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
-//        Thread.sleep(3000);
         driver.navigate().to("https://live.easyerp.com/#easyErp/purchaseOrders/list");
+
         Thread.sleep(5000);
         driver.findElement(By.xpath("//div[4]/div[1]/div/a[1]")).click();
         Thread.sleep(1000);
@@ -36,9 +33,8 @@ public class CreatingOrder {
         driver.findElement(By.xpath("//div/table/tbody/tr[3]/td[1]/div/div/a")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath(".//*[@id='5898663372c8e19c34cd6919']/b")).click();
-        Thread.sleep(1000);
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//div[2]/div/div/div/table/tbody/tr/td/a")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//tr[5]/td[1]/div/div/a")).click();

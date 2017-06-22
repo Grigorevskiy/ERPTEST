@@ -14,6 +14,5 @@ public class Magento extends BaseTest{
         loginMagento.login(driver,"admin","admin123456");
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/div[4]/table/thead/tr/th[1]/div/label")).click();
-
     }
 }

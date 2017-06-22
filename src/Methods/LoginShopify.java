@@ -15,6 +15,5 @@ public class LoginShopify {
         driver.findElement(By.id("Password")).sendKeys("123456qwerty");
         Thread.sleep(2000);
         driver.findElement(By.name("commit")).click();
-
     }
 }

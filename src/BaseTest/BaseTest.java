@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     public WebDriver driver;
-    public String baseUrl = "https://easyerp-test.myshopify.com/admin";
+    //public String baseUrl = "https://easyerp-test.myshopify.com/admin";
     public static Integer seconds = 5000;
     public  Wait<WebDriver> wait;
 

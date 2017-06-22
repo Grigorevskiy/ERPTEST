@@ -54,6 +54,7 @@ public class PurchaseOrder2 extends BaseTest {
         driver.findElement(By.id("create-person-dialog")).click();
         Thread.sleep(3000);
 
+        //Delivery
         driver.findElement(By.xpath("//div[2]/table/tbody/tr[1]/td[2]")).click();
         String URL = driver.getCurrentUrl();
         Thread.sleep(2000);

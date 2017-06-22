@@ -1,6 +1,7 @@
 package Test;
 import BaseTest.BaseTest;
 import Methods.LoginEasyErp;
+import Methods.LoginShopify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
@@ -10,12 +11,8 @@ import java.io.InterruptedIOException;
 public class ShopiFy  extends BaseTest {
     @Test
     public void CreateOrder() throws InterruptedException, InterruptedIOException {
-        driver.findElement(By.id("Login")).clear();
-        driver.findElement(By.id("Login")).sendKeys("norbert.madyar@thinkmobiles.com");
-        driver.findElement(By.id("Password")).clear();
-        driver.findElement(By.id("Password")).sendKeys("123456qwerty");
-        Thread.sleep(2000);
-        driver.findElement(By.name("commit")).click();
+        LoginShopify loginShopify = new LoginShopify();
+        loginShopify.login(driver,"norbert.madyar@thinkmobiles.com","123456qwerty");
         Thread.sleep(5000);
         driver.findElement(By.xpath("//aside[@id='AppFrameAside']/div[2]/div[2]/div/div/nav/ul/li[2]/a/span")).click();
         driver.findElement(By.xpath("(//a[contains(text(),'Create order')])[2]")).click();

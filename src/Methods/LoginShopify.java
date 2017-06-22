@@ -1,13 +1,11 @@
 package Methods;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import java.io.InterruptedIOException;
 
-/**
- * Created by viktor on 22.06.17.
- */
+
+
+
 public class LoginShopify {
     public void login(WebDriver driver, String email, String pass) throws InterruptedIOException, InterruptedException {
         driver.navigate().to("https://easyerp-test.myshopify.com/admin/auth/login");

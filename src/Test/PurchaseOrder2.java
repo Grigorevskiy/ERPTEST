@@ -55,6 +55,7 @@ public class PurchaseOrder2 extends BaseTest {
         Thread.sleep(3000);
 
         driver.findElement(By.xpath("//div[2]/table/tbody/tr[1]/td[2]")).click();
+        String URL = driver.getCurrentUrl();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/fieldset/div[1]/ul/button")).click();
         Thread.sleep(1000);
@@ -64,9 +65,8 @@ public class PurchaseOrder2 extends BaseTest {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[3]/div/button[1]")).click();
 
-        String URL = driver.getCurrentUrl();
-
-        Thread.sleep(1000);
+        driver.navigate().to(URL);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//div/fieldset/div[1]/ul/li[2]/a")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[1]/ul/li[2]/ul/li[1]/a/span")).click();
@@ -112,5 +112,19 @@ public class PurchaseOrder2 extends BaseTest {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).sendKeys("6.125");
         driver.findElement(By.xpath("//div[3]/div/button[1]")).click();
+
+        //CreateInvoice
+        driver.navigate().to(URL);
+        Thread.sleep(4000);
+        driver.findElement(By.xpath("//div/fieldset/div[1]/ul/button")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(".//*[@id='createPersonsForm']/fieldset/div[1]/ul/button")).click();
+        Thread.sleep(2000);
+
+        //Approve
+        driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//div/ul/li/button[4]")).click();
+        Thread.sleep(3000);
     }
 }

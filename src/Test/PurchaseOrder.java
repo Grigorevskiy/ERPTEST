@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 
+import static org.testng.AssertJUnit.assertEquals;
 
 
 public class PurchaseOrder extends BaseTest{
@@ -33,14 +34,14 @@ public class PurchaseOrder extends BaseTest{
         Thread.sleep(2000);
         driver.findElement(By.xpath("//tr[1]/td[1]/div/div/a")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//tr[1]/td[1]/div/div/a/div/div/ul/li[7]/span")).click();
+        driver.findElement(By.xpath(".//*[@id='57d688229a9879d511e835b5']/b")).click();
 
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[2]/div/div/div/table/tbody/tr/td/a")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/table/tbody/tr[3]/td[1]/div/div/a")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//td[1]/div/div/a/div/div/ul/li[1]/span")).click();
+        driver.findElement(By.xpath(".//*[@id='5898663372c8e19c34cd6919']/b")).click();
         Thread.sleep(1000);
 
         Thread.sleep(2000);
@@ -48,7 +49,7 @@ public class PurchaseOrder extends BaseTest{
         Thread.sleep(2000);
         driver.findElement(By.xpath("//tr[5]/td[1]/div/div/a")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//td[1]/div/div/a/div/div/ul/li[3]/span")).click();
+        driver.findElement(By.xpath(".//*[@id='5898663372c8e19c34cd691b']/b")).click();
 
         driver.findElement(By.id("discount")).clear();
         Thread.sleep(2000);
@@ -129,23 +130,36 @@ public class PurchaseOrder extends BaseTest{
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/fieldset/div/ul/li/button[4]")).click();
         Thread.sleep(2000);
+
+        //Balance Sheet
+//        driver.navigate().to("https://live.easyerp.com/#easyErp/balanceSheet/list");
+//        Thread.sleep(2000);
+//        String TotalAssets = driver.findElement(By.xpath(".//*[@id='totalAssetsSumm']/span")).getText();
+//        String TotalLiabilities = driver.findElement(By.xpath(".//*[@id='totalSumm']/span")).getText();
+//
+//        if(TotalAssets.equals(TotalLiabilities)){
+//            System.out.println("Balance Sheet is completed");
+//        }
+//        else {
+//            System.out.println("Balance Sheet ERROR");
+//        }
+
+
     }
 
     @Test
     public void PartialPayments() throws InterruptedIOException,InterruptedException{
-        LoginEasyErp loginEasyErp = new LoginEasyErp();
-        loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
-        Thread.sleep(3000);
-        driver.navigate().to("https://live.easyerp.com/#easyErp/purchaseOrders/list");
-        Thread.sleep(5000);
-//        System.out.println(ordername);
-//        driver.findElement(By.xpath("//div[2]/table/tbody/tr[1]/td[2]")).click();
-//        Thread.sleep(2000);
-        String URL = driver.getCurrentUrl();
-        driver.navigate().to(URL);
+        driver.navigate().to("https://live.easyerp.com/#easyErp/balanceSheet/list");
         Thread.sleep(2000);
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("table"))));
-        driver.findElement(By.id("table")).click();
+        String TotalAssets = driver.findElement(By.xpath(".//*[@id='totalAssetsSumm']/span")).getText();
+        String TotalLiabilities = driver.findElement(By.xpath(".//*[@id='totalSumm']/span")).getText();
+
+        if(TotalAssets.equals(TotalLiabilities)){
+            System.out.println("Balance Sheet is completed");
+        }
+        else {
+            System.out.println("Balance Sheet ERROR");
+        }
     }
 }
 

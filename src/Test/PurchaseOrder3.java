@@ -30,14 +30,14 @@ public class PurchaseOrder3 extends BaseTest {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//tr[1]/td[1]/div/div/a")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//tr[1]/td[1]/div/div/a/div/div/ul/li[7]/span")).click();
+        driver.findElement(By.xpath(".//*[@id='57d688229a9879d511e835b5']/b")).click();
 
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[2]/div/div/div/table/tbody/tr/td/a")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/table/tbody/tr[3]/td[1]/div/div/a")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//td[1]/div/div/a/div/div/ul/li[1]/span")).click();
+        driver.findElement(By.xpath(".//*[@id='5898663372c8e19c34cd6919']/b")).click();
         Thread.sleep(1000);
 
         Thread.sleep(2000);
@@ -45,7 +45,7 @@ public class PurchaseOrder3 extends BaseTest {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//tr[5]/td[1]/div/div/a")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//td[1]/div/div/a/div/div/ul/li[3]/span")).click();
+        driver.findElement(By.xpath(".//*[@id='5898663372c8e19c34cd691b']/b")).click();
 
         driver.findElement(By.id("discount")).clear();
         Thread.sleep(2000);
@@ -92,6 +92,19 @@ public class PurchaseOrder3 extends BaseTest {
         driver.findElement(By.xpath("//div/fieldset/div/ul/li[2]/ul/li[1]/a/span")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='create-payment-dialog']")).click();
+
+        //Balance Sheet
+        driver.navigate().to("https://live.easyerp.com/#easyErp/balanceSheet/list");
+        Thread.sleep(2000);
+        String TotalAssets = driver.findElement(By.xpath(".//*[@id='totalAssetsSumm']/span")).getText();
+        String TotalLiabilities = driver.findElement(By.xpath(".//*[@id='totalSumm']/span")).getText();
+
+        if(TotalAssets.equals(TotalLiabilities)){
+            System.out.println("Balance Sheet is completed");
+        }
+        else {
+            System.out.println("Balance Sheet ERROR");
+        }
     }
 }
 

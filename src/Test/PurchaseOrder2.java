@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 
 
-
 public class PurchaseOrder2 extends BaseTest {
     @Test
     public void CreateOrder2() throws InterruptedException, InterruptedIOException {

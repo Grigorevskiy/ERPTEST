@@ -14,10 +14,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     public WebDriver driver;
-    //public String baseUrl = "https://easyerp-test.myshopify.com/admin";
     public static Integer seconds = 5000;
-    public  Wait<WebDriver> wait;
-
+   // public static Wait<WebDriver> wait ;
+    public static String wait;
 
         @BeforeTest
         public void SetUp() {
@@ -28,7 +27,8 @@ public class BaseTest {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
             driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
-            wait = new WebDriverWait(driver, 5, 1000);
+            //WebDriverWait wait = new WebDriverWait(driver, 10);
+
         }
 
         @AfterTest

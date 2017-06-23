@@ -1,13 +1,13 @@
 package Methods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import java.io.InterruptedIOException;
 
 
 
 public class LoginMagento {
-    public void login (WebDriver driver, String email, String pass) throws InterruptedIOException, InterruptedException {
-        driver.navigate().to("http://magento-test.easyerp.com/admin");
+    public void login (WebDriver driver, String email, String pass) throws InterruptedException {
+        String MagentoURL = "http://magento-test.easyerp.com/admin";
+        driver.get(MagentoURL);
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='username']")).clear();
         driver.findElement(By.xpath(".//*[@id='username']")).sendKeys("admin");

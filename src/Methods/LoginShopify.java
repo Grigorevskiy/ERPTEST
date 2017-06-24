@@ -1,6 +1,9 @@
 package Methods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.io.InterruptedIOException;
 
 
@@ -13,7 +16,8 @@ public class LoginShopify {
         driver.findElement(By.xpath(".//*[@id='Login']")).sendKeys("norbert.madyar@thinkmobiles.com");
         driver.findElement(By.id("Password")).clear();
         driver.findElement(By.id("Password")).sendKeys("123456qwerty");
-        Thread.sleep(2000);
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("commit")))).click();
         driver.findElement(By.name("commit")).click();
     }
 }

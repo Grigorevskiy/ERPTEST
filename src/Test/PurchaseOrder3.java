@@ -24,13 +24,13 @@ public class PurchaseOrder3 extends BaseTest {
         Thread.sleep(2000);
         String URLorder = driver.getCurrentUrl();
 
-        driver.navigate().to(URLorder);
-        Thread.sleep(4000);
+        //driver.navigate().to(URLorder);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//div/fieldset/div[1]/ul/button")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='createPersonsForm']/fieldset/div[1]/ul/button")).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         //Approve
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
         Thread.sleep(2000);

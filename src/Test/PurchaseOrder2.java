@@ -81,12 +81,12 @@ public class PurchaseOrder2 extends BaseTest {
 
         //CreateInvoice
         driver.navigate().to(URL);
-        Thread.sleep(4000);
+        Thread.sleep(4500);
         driver.findElement(By.xpath("//div/fieldset/div[1]/ul/button")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='createPersonsForm']/fieldset/div[1]/ul/button")).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         //Approve
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
         Thread.sleep(2000);

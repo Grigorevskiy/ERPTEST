@@ -27,7 +27,7 @@ public class BaseTest {
             driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-          //  driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
            // WebDriverWait wait = new WebDriverWait(driver, 10);
 
         }

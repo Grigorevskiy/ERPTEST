@@ -15,7 +15,6 @@ import java.util.Random;
 
 public class MagentoSync extends BaseTest {
     String OrderPage = "http://magento-test.easyerp.com/admin/sales/order/index/key/77d851f339811c4720628b57fd591dabe6015a4e794e22a4afa2b052173259f4/";
-
     public static void ExplicitWait(WebDriver driver, String locator) {
         (new WebDriverWait(driver, 5))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
@@ -31,7 +30,6 @@ public class MagentoSync extends BaseTest {
 //        wait = new WebDriverWait(driver,10);
 //        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form/div[1]/div/div[1]/div/div/div[2]/div/div[3]/div/button[2]"))).click();
         //  WebDriverWait wait = new WebDriverWait(driver, 10);
-
 //new WebDriverWait(driver,5)
 //        .until(ExpectedConditions.(By.xpath("//div[4]/table/thead/tr/th[1]/div/label")));
         //Thread.sleep(4000);
@@ -44,7 +42,7 @@ public class MagentoSync extends BaseTest {
     }
 
     @Test
-    public void AddProduct() throws InterruptedIOException, InterruptedException {
+    public void AddProductERP() throws InterruptedIOException, InterruptedException {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         Thread.sleep(3000);
@@ -68,6 +66,7 @@ public class MagentoSync extends BaseTest {
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
         Thread.sleep(4000);
+//CreateList
         driver.findElement(By.xpath(".//*[@id='createEmployeeForm']/ul/li[4]/a")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div/div/div[1]/div/dl[1]/div[2]/dd/input")).clear();
@@ -90,32 +89,27 @@ public class MagentoSync extends BaseTest {
         driver.navigate().to(OrderPage);
         driver.findElement(By.xpath(".//*[@id='add']")).click();
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(".//*[@id='sales_order_create_customer_grid_table']/tbody/tr[3]/td[2]")))).click();
-
         Thread.sleep(3000);
         driver.findElement(By.xpath(".//*[@id='order-items']/div[1]/div/button")).click();
         Thread.sleep(2000);
         JavascriptExecutor jsDown = (JavascriptExecutor) driver;
         jsDown.executeScript("scroll(0,400);");
-
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='sales_order_create_search_grid_table']/tbody/tr[8]/td[2]")).click();
-Thread.sleep(2000);
+        Thread.sleep(2000);
         JavascriptExecutor jsUp = (JavascriptExecutor) driver;
         jsUp.executeScript("scroll(400,0);");
-Thread.sleep(2000);
-
+        Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='id_7cbd301c5b53736710337c068e67db60'][contains(@title, 'Add Selected Product(s) to Order')]")).click();
-      Thread.sleep(2000);
-jsDown.executeScript("scroll(0,700)");
-Thread.sleep(3000);
-
+        Thread.sleep(2000);
+        jsDown.executeScript("scroll(0,700)");
+        Thread.sleep(3000);
 //ShipMethod
-driver.findElement(By.xpath(".//*[@id='order-shipping-method-summary']/a/span")).click();
-Thread.sleep(2000);
-driver.findElement(By.xpath(".//*[@id='s_method_flatrate_flatrate']")).click();
+        driver.findElement(By.xpath(".//*[@id='order-shipping-method-summary']/a/span")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(".//*[@id='s_method_flatrate_flatrate']")).click();
 //subOrder
         driver.findElement(By.xpath(".//*[@id='submit_order_top_button']")).click();
-
     }
 
     @Test
@@ -145,6 +139,33 @@ driver.findElement(By.xpath(".//*[@id='s_method_flatrate_flatrate']")).click();
         int randomInt = randomGenerator.nextInt(1000);
         emailRandom.sendKeys("username"+ randomInt +"@gmail.com");
         Thread.sleep(1000);
+       // driver.findElement(By.xpath(".//*[@id='save']")).click();
+//AddAdress
+        JavascriptExecutor jsUp = (JavascriptExecutor) driver;
+        jsUp.executeScript("scroll(200,0);");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(".//*[@id='tab_address']/span[1]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(".//*[@id='container']/div/div/div[2]/div[2]/div/div[2]/fieldset/div/ul/li/button")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.name("address[new_0][firstname]")).clear();
+        driver.findElement(By.name("address[new_0][firstname]")).sendKeys("Name");
+        Thread.sleep(1000);
+        driver.findElement(By.name("address[new_0][lastname]")).clear();
+        driver.findElement(By.name("address[new_0][lastname]")).sendKeys("LastName");
+        Thread.sleep(1000);
+        driver.findElement(By.name("address[new_0][street][0]")).clear();
+        driver.findElement(By.name("address[new_0][street][0]")).sendKeys("Address");
+        Thread.sleep(1000);
+        driver.findElement(By.name("address[new_0][country_id]")).click();
+        driver.findElement(By.name(".//div/select/option[2]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.name("address[new_0][postcode]")).clear();
+        driver.findElement(By.name("address[new_0][postcode]")).sendKeys("123456");
+        Thread.sleep(1000);
+        driver.findElement(By.name("address[new_0][telephone]")).clear();
+        driver.findElement(By.name("address[new_0][telephone]")).sendKeys("242365412312");
+        Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='save']")).click();
     }
 }

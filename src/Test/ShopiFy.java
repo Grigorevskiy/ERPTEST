@@ -10,6 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 
+import static BaseTest.Waits.WaitsMethod.ClickableExplicit;
+import static BaseTest.Waits.WaitsMethod.PresentExplicit;
+
 
 public class ShopiFy  extends BaseTest {
     public static void ExplicitWait (WebDriver driver , String locator) {

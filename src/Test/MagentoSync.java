@@ -12,6 +12,9 @@ import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 import java.util.Random;
 
+import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
+import static BaseTest.Waits.WaitsMethod.PresentExplicit;
+
 
 public class MagentoSync extends BaseTest {
     String OrderPage = "http://magento-test.easyerp.com/admin/sales/order/index/key/77d851f339811c4720628b57fd591dabe6015a4e794e22a4afa2b052173259f4/";

@@ -17,15 +17,24 @@ public class MagentoSync extends BaseTest {
     String OrderPage = "http://magento-test.easyerp.com/admin/sales/order/index/key/77d851f339811c4720628b57fd591dabe6015a4e794e22a4afa2b052173259f4/";
 
     public static void ExplicitWait (WebDriver driver , String locator) {
-        (new WebDriverWait(driver,10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        (new WebDriverWait(driver,5))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
     }
     @Test
     public void DeleteOrders () throws InterruptedException, InterruptedIOException{
+       // driver.manage().timeouts().implicitlyWait(5 ,TimeUnit.SECONDS);
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver,"admin","admin123456");
         driver.navigate().to(OrderPage);
-        ExplicitWait(driver,"//div[4]/table/thead/tr/th[1]/div/label");
-        driver.findElement(By.xpath("//div[4]/table/thead/tr/th[1]/div/label")).click();
+      //  ExplicitWait(driver,"//div[4]/table/thead/tr/th[1]/div/label");
+//        wait = new WebDriverWait(driver,10);
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form/div[1]/div/div[1]/div/div/div[2]/div/div[3]/div/button[2]"))).click();
+      //  WebDriverWait wait = new WebDriverWait(driver, 10);
+
+//new WebDriverWait(driver,5)
+//        .until(ExpectedConditions.(By.xpath("//div[4]/table/thead/tr/th[1]/div/label")));
+        //Thread.sleep(4000);
+         driver.findElement(By.xpath("//div[4]/table/thead/tr/th[1]/div/label")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='container']/div/div[2]/div[2]/div[1]/div/button")).click();
         Thread.sleep(1000);
@@ -56,7 +65,7 @@ public class MagentoSync extends BaseTest {
         driver.findElement(By.xpath(".//*[@id='linkProduct']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         driver.findElement(By.xpath(".//*[@id='createEmployeeForm']/ul/li[4]/a")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div/div/div[1]/div/dl[1]/div[2]/dd/input")).clear();
@@ -102,8 +111,5 @@ public class MagentoSync extends BaseTest {
 
 //        WebElement myDynamicElement = driver.findElement(By.xpath(".//*[@id='order-items']/div[1]/div/button"));
 //        myDynamicElement.click();
-    public static void ImplicitWait (WebDriver driver){
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
     }
 

@@ -40,7 +40,7 @@ public class PurchaseOrder extends BaseTest{
 
         Thread.sleep(2000);
         driver.navigate().to(URL);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//div/fieldset/div[1]/ul/li[2]/a")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div[1]/ul/li[2]/ul/li[1]/a/span")).click();
@@ -93,8 +93,13 @@ public class PurchaseOrder extends BaseTest{
         driver.findElement(By.xpath("//div[2]/table/tbody/tr[1]/td[2]")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/fieldset/div/ul/li/button[4]")).click();
+    }
 
-        Thread.sleep(2000);
+    @Test
+    public void BalanceSheet () throws InterruptedException, InterruptedIOException{
+        LoginEasyErp loginEasyErp = new LoginEasyErp();
+        loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
+        Thread.sleep(4000);
         BalanceSheet balanceSheet = new BalanceSheet();
         balanceSheet.VerifyBalanceSheet(driver);
     }

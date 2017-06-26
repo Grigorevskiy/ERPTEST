@@ -22,7 +22,9 @@ public class ShopiFy  extends BaseTest {
         LoginShopify loginShopify = new LoginShopify();
         loginShopify.login(driver,"norbert.madyar@thinkmobiles.com","123456qwerty");
         driver.findElement(By.xpath("//aside[@id='AppFrameAside']/div[2]/div[2]/div/div/nav/ul/li[2]/a/span")).click();
+
         driver.findElement(By.xpath("(//a[contains(text(),'Create order')])[2]")).click();
+
         driver.findElement(By.xpath("//input[@id='']")).clear();
         driver.findElement(By.xpath("//input[@id='']")).sendKeys("I");
         driver.findElement(By.id("product_search_input")).clear();
@@ -46,10 +48,10 @@ public class ShopiFy  extends BaseTest {
         Thread.sleep(5000);
         //ExplicitWait(driver,"html/body/div[4]/div[4]/div[2]/div[1]/div/span[1]");
         driver.findElement(By.xpath("html/body/div[4]/div[4]/div[2]/div[1]/div/span[1]")).click();
-        String ordresValue = driver.findElement(By.xpath(".//*[@id='content-holder']/div[2]/div/div[3]/div[2]/div[2]/span")).getText();
+        String ordresValue = driver.findElement(By.xpath(".//*[@id='content-holder']/div[2]/div/div[4]/div[2]/div[2]/span")).getText();
         int waitTo = 0;
         do{
-            String finalorderValue = driver.findElement(By.xpath(".//*[@id='content-holder']/div[2]/div/div[3]/div[2]/div[2]/span")).getText();
+            String finalorderValue = driver.findElement(By.xpath(".//*[@id='content-holder']/div[2]/div/div[4]/div[2]/div[2]/span")).getText();
             if(!ordresValue.equals(finalorderValue)){
                 waitTo = 1;
             }

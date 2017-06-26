@@ -91,7 +91,12 @@ public class PurchaseOrder2 extends BaseTest {
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/ul/li/button[4]")).click();
+    }
 
+    @Test
+    public void BalanceSheet () throws InterruptedException, InterruptedIOException{
+        LoginEasyErp loginEasyErp = new LoginEasyErp();
+        loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         Thread.sleep(3000);
         BalanceSheet balanceSheet = new BalanceSheet();
         balanceSheet.VerifyBalanceSheet(driver);

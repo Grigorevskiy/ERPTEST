@@ -58,8 +58,13 @@ public class PurchaseOrder3 extends BaseTest {
         driver.findElement(By.xpath("//div/fieldset/div/ul/li[2]/ul/li[1]/a/span")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='create-payment-dialog']")).click();
+    }
 
-        Thread.sleep(2000);
+    @Test
+    public void BalanceSheet () throws InterruptedException, InterruptedIOException{
+        LoginEasyErp loginEasyErp = new LoginEasyErp();
+        loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
+        Thread.sleep(5000);
         BalanceSheet balanceSheet = new BalanceSheet();
         balanceSheet.VerifyBalanceSheet(driver);
     }

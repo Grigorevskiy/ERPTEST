@@ -1,4 +1,4 @@
-package Methods;
+package Methods.EasyERP;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import java.io.InterruptedIOException;

@@ -1,4 +1,4 @@
-package Methods;
+package Methods.Login;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

@@ -1,8 +1,8 @@
 package Test;
 import BaseTest.BaseTest;
-import Methods.BalanceSheet;
-import Methods.CreatingOrders.CreatingOrder;
-import Methods.LoginEasyErp;
+import Methods.EasyERP.BalanceSheet;
+import Methods.EasyERP.CreatingOrder;
+import Methods.EasyERP.LoginEasyErp;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
@@ -91,6 +91,10 @@ public class PurchaseOrder2 extends BaseTest {
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/ul/li/button[4]")).click();
+
+        Thread.sleep(3000);
+        BalanceSheet balanceSheet = new BalanceSheet();
+        balanceSheet.VerifyBalanceSheet(driver);
     }
 
     @Test

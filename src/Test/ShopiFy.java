@@ -1,11 +1,10 @@
 package Test;
 import BaseTest.BaseTest;
-import Methods.LoginEasyErp;
-import Methods.LoginShopify;
+import Methods.EasyERP.LoginEasyErp;
+import Methods.Login.LoginShopify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -22,9 +21,7 @@ public class ShopiFy  extends BaseTest {
         LoginShopify loginShopify = new LoginShopify();
         loginShopify.login(driver,"norbert.madyar@thinkmobiles.com","123456qwerty");
         driver.findElement(By.xpath("//aside[@id='AppFrameAside']/div[2]/div[2]/div/div/nav/ul/li[2]/a/span")).click();
-
         driver.findElement(By.xpath("(//a[contains(text(),'Create order')])[2]")).click();
-
         driver.findElement(By.xpath("//input[@id='']")).clear();
         driver.findElement(By.xpath("//input[@id='']")).sendKeys("I");
         driver.findElement(By.id("product_search_input")).clear();

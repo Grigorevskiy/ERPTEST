@@ -1,11 +1,9 @@
 package Test;
 import BaseTest.BaseTest;
-import Methods.BalanceSheet;
-import Methods.CreatingOrders.CreatingOrder;
-import Methods.LoginEasyErp;
+import Methods.EasyERP.BalanceSheet;
+import Methods.EasyERP.CreatingOrder;
+import Methods.EasyERP.LoginEasyErp;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 
@@ -13,7 +11,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 
 public class PurchaseOrder extends BaseTest{
-    @Test
+    @Test(priority=1)
     public void CreateOrder () throws InterruptedException , InterruptedIOException {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
@@ -93,9 +91,13 @@ public class PurchaseOrder extends BaseTest{
         driver.findElement(By.xpath("//div[2]/table/tbody/tr[1]/td[2]")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/fieldset/div/ul/li/button[4]")).click();
+
+        Thread.sleep(4000);
+        BalanceSheet balanceSheet = new BalanceSheet();
+        balanceSheet.VerifyBalanceSheet(driver);
     }
 
-    @Test
+    @Test(priority=2)
     public void BalanceSheet () throws InterruptedException, InterruptedIOException{
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");

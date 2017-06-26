@@ -31,9 +31,11 @@ public class ShopiFy  extends BaseTest {
         Thread.sleep(2000);
                 JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("scroll(0,200);");
-        wait = new WebDriverWait(driver,10);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form/div[1]/div/div[1]/div/div/div[2]/div/div[3]/div/button[2]"))).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[2]/div[5]/form/div[2]/div/div[2]/div/button")))).click();
+       // wait = new WebDriverWait(driver,10);
+        PresentExplicit(driver,"//form/div[1]/div/div[1]/div/div/div[2]/div/div[3]/div/button[2]");
+        //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form/div[1]/div/div[1]/div/div/div[2]/div/div[3]/div/button[2]"))).click();
+        ClickableExplicit(driver,"//div[2]/div[5]/form/div[2]/div/div[2]/div/button");
+        //wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[2]/div[5]/form/div[2]/div/div[2]/div/button")))).click();
     }
 
     @Test

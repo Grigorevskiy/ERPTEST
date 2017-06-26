@@ -15,29 +15,37 @@ import java.util.Random;
 
 public class MagentoSync extends BaseTest {
     String OrderPage = "http://magento-test.easyerp.com/admin/sales/order/index/key/77d851f339811c4720628b57fd591dabe6015a4e794e22a4afa2b052173259f4/";
-    public static void ExplicitWait(WebDriver driver, String locator) {
-        (new WebDriverWait(driver, 5))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
-    }
+//    public static void ExplicitWait(WebDriver driver, String locator) {
+//        (new WebDriverWait(driver, 5))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
+
 
     @Test
     public void DeleteOrders() throws InterruptedException, InterruptedIOException {
-        // driver.manage().timeouts().implicitlyWait(5 ,TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
         driver.navigate().to(OrderPage);
-        //  ExplicitWait(driver,"//div[4]/table/thead/tr/th[1]/div/label");
-//        wait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(driver,10);
 //        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form/div[1]/div/div[1]/div/div/div[2]/div/div[3]/div/button[2]"))).click();
         //  WebDriverWait wait = new WebDriverWait(driver, 10);
 //new WebDriverWait(driver,5)
 //        .until(ExpectedConditions.(By.xpath("//div[4]/table/thead/tr/th[1]/div/label")));
-        //Thread.sleep(4000);
-        Thread.sleep(3000);
+
+
+        //By loadingImage = By.xpath(".//*[@id='container']/div/div[1]");
+      // WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[@id='container']/div/div[1]")));
         driver.findElement(By.xpath("//div[4]/table/thead/tr/th[1]/div/label")).click();
-        Thread.sleep(2000);
+//
+//        WebElement test = (new WebDriverWait(driver,10))
+//                .until(ExpectedConditions.elementToBeClickable(By.xpath("//div[4]/table/thead/tr/th[1]/div/label")));
+//        test.click();
+//        Thread.sleep(2000);
+//
+        //PresentExplicit(driver,".//*[@id='container']/div/div[2]/div[2]/div[1]/div/button");
         driver.findElement(By.xpath(".//*[@id='container']/div/div[2]/div[2]/div[1]/div/button")).click();
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
         driver.findElement(By.xpath("//div[2]/div[1]/div/ul/li[1]/span")).click();
     }
 
@@ -47,12 +55,18 @@ public class MagentoSync extends BaseTest {
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         Thread.sleep(3000);
         driver.navigate().to("https://live.easyerp.com/#easyErp/Products/list");
-        Thread.sleep(3000);
-        driver.findElement(By.xpath(".//*[@id='top-bar-createBtn']")).click();
-        Thread.sleep(2000);
+
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[@id='loading']")));
+
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        PresentExplicit(driver,".//*[@id='top-bar-createBtn']");
+        //driver.findElement(By.xpath(".//*[@id='top-bar-createBtn']")).click();
+
+
         driver.findElement(By.xpath(".//*[@id='product']")).clear();
         driver.findElement(By.xpath(".//*[@id='product']")).sendKeys("MacBook");
-        Thread.sleep(1000);
+       // Thread.sleep(1000);
         driver.findElement(By.xpath("//div[1]/div[1]/div/div[2]/div[2]/label[1]/span")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='SKU']")).clear();
@@ -116,7 +130,7 @@ public class MagentoSync extends BaseTest {
     public void CreteCustomers () throws InterruptedIOException, InterruptedException {
         LoginMagento loginMagento =new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         driver.findElement(By.xpath(".//*[@id='html-body']/div[4]/aside[1]/div[2]/header/button")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath(".//*[@id='menu-magento-customer-customer']/a/span")).click();

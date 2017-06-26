@@ -20,6 +20,7 @@ public class MagentoSync extends BaseTest {
         (new WebDriverWait(driver, 5))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
     }
+
     @Test
     public void DeleteOrders() throws InterruptedException, InterruptedIOException {
         // driver.manage().timeouts().implicitlyWait(5 ,TimeUnit.SECONDS);

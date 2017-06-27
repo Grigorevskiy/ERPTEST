@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.io.InterruptedIOException;
 import java.util.Random;
 import static BaseTest.Waits.WaitsMethod.ClickableExplicit;
@@ -14,12 +17,15 @@ import static BaseTest.Waits.WaitsMethod.PresentExplicit;
 
 
 public class MagentoCustomers {
+    String name;
+
     public void CreateCustomer (WebDriver driver) throws InterruptedException,InterruptedIOException{
         PresentExplicit(driver,".//*[@id='menu-magento-customer-customer']/a/span");
 //        InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
         ClickableExplicit(driver,".//*[@id='menu-magento-customer-customer']/div/ul/li[1]/a/span");
         PresentExplicit(driver,".//*[@id='add']");
-//        driver.findElement(By.xpath(".//*[@id='add']")).click();
+
+
         Thread.sleep(2000);
         driver.findElement(By.name("customer[firstname]")).clear();
         driver.findElement(By.name("customer[firstname]")).sendKeys("Bret");
@@ -33,8 +39,9 @@ public class MagentoCustomers {
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(1000);
         emailRandom.sendKeys("username"+ randomInt +"@gmail.com");
+        name = emailRandom.getText();
         Thread.sleep(1000);
-//AddAdress
+//AddAddress
         JavascriptExecutor jsUp = (JavascriptExecutor) driver;
         jsUp.executeScript("scroll(200,0);");
         Thread.sleep(2000);
@@ -65,12 +72,25 @@ public class MagentoCustomers {
         Thread.sleep(1000);
         driver.findElement(By.name("address[new_0][telephone]")).clear();
         driver.findElement(By.name("address[new_0][telephone]")).sendKeys("242365412312");
-        Thread.sleep(2000);
+Thread.sleep(2000);
+//        ClickableExplicit(driver,".//*[@id='save']");
         driver.findElement(By.xpath(".//*[@id='save']")).click();
+//        Thread.sleep(5000);
+//        driver.findElement(By.xpath(".//*[@id='save']")).click();
 //        Thread.sleep(6000);
-        Thread.sleep(3000);
-        InvisibilityExplicit(driver,".//*[@id='container']/div/div/div");
+        InvisibilityExplicit(driver,".//*[@id='html-body']/div[1]/div");
+//Thread.sleep(10000);
+//
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("commit")))).click();
 
-        PresentExplicit(driver,".//*[@id='messages']/div/div/div");
+        InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]/div");
+WebElement email = driver.findElement(By.xpath(".//*[@id='container']/div/div[5]/table/tbody//div[contains(text(),'"+name+"')]"));
+email.getText();
+//        WebElement email = PresentExplicit(driver,".//*[@id='container']/div/div[5]/table/tbody//div[contains(text(),'"+name+"')]");
+//        email.getText();
+System.out.print(email);
+
+//        PresentExplicit(driver,".//*[@id='messages']/div/div/div");
     }
 }

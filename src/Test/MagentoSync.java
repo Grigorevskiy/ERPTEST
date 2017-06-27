@@ -1,5 +1,6 @@
 package Test;
 import BaseTest.BaseTest;
+import Methods.EasyERP.ChanelMagento;
 import Methods.EasyERP.LoginEasyErp;
 import Methods.Magento.LoginMagento;
 import Methods.Magento.MagentoCustomers;
@@ -69,7 +70,28 @@ public class MagentoSync extends BaseTest {
         loginMagento.login(driver, "admin", "admin123456");
         MagentoCustomers magentoCustomers = new MagentoCustomers();
         magentoCustomers.CreateCustomer(driver);
+
     }
+
+    @Test
+    public void DeleteChanelMagento () throws InterruptedException , InterruptedIOException {
+        LoginEasyErp loginEasyErp = new LoginEasyErp();
+        loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
+        ChanelMagento chanelMagento = new ChanelMagento();
+        chanelMagento.DeleteChanel(driver);
+
+    }
+
+    @Test
+    public void CreatMagentoChannel () throws InterruptedException, InterruptedIOException {
+        LoginEasyErp loginEasyErp = new LoginEasyErp();
+        loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
+        ChanelMagento chanelMagento = new ChanelMagento();
+        chanelMagento.CreateChanel(driver);
+
+    }
+
+
 
     @Test
     public void CreateOrderMagento() throws InterruptedException, InterruptedIOException {
@@ -116,6 +138,9 @@ public class MagentoSync extends BaseTest {
         // driver.findElement(By.xpath(".//*[@id='s_method_flatrate_flatrate']")).click();
 //subOrder
         driver.findElement(By.xpath(".//*[@id='submit_order_top_button']")).click();
+
+
+//        .//*[@id='container']/div/div[5]/table/tbody//div[contains(text(),'test1@mail.ru')]
     }
 }
 

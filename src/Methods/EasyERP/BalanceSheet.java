@@ -1,6 +1,8 @@
 package Methods.EasyERP;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import java.io.InterruptedIOException;
 
 
@@ -12,11 +14,13 @@ public class BalanceSheet {
         String TotalAssets = driver.findElement(By.xpath(".//*[@id='totalAssetsSumm']/span")).getText();
         String TotalLiabilities = driver.findElement(By.xpath(".//*[@id='totalSumm']/span")).getText();
 
-        if(TotalAssets.equals(TotalLiabilities)){
-            System.out.println("Balance Sheet is completed");
-        }
-        else {
-            System.out.println("Balance Sheet ERROR");
-        }
+        Assert.assertEquals(TotalAssets, TotalLiabilities);
+
+//        if(TotalAssets.equals(TotalLiabilities)){
+//            System.out.println("Balance Sheet is completed");
+//        }
+//        else {
+//            System.out.println("Balance Sheet ERROR");
+//        }
     }
 }

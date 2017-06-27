@@ -1,16 +1,12 @@
 package Test;
 import BaseTest.BaseTest;
 import Methods.EasyERP.LoginEasyErp;
-import Methods.Login.LoginMagento;
+import Methods.Magento.LoginMagento;
+import Methods.Magento.MagentoCustomers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
-import java.util.Random;
 
 import static BaseTest.Waits.WaitsMethod.ClickableExplicit;
 import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
@@ -65,6 +61,16 @@ public class MagentoSync extends BaseTest {
         driver.findElement(By.xpath(".//*[@id='saveBtn']")).click();
     }
 
+
+
+    @Test
+    public void CreateCustomer ()  throws InterruptedIOException , InterruptedException{
+        LoginMagento loginMagento =new LoginMagento();
+        loginMagento.login(driver, "admin", "admin123456");
+        MagentoCustomers magentoCustomers = new MagentoCustomers();
+        magentoCustomers.CreateCustomer(driver);
+    }
+
     @Test
     public void CreateOrderMagento() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
@@ -86,7 +92,7 @@ public class MagentoSync extends BaseTest {
         //Thread.sleep(2000);
         JavascriptExecutor jsDown = (JavascriptExecutor) driver;
         jsDown.executeScript("scroll(0,400);");
-       // Thread.sleep(2000);
+        // Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='sales_order_create_search_grid_table']/tbody/tr[8]/td[2]")).click();
 
         JavascriptExecutor jsUp = (JavascriptExecutor) driver;
@@ -99,72 +105,17 @@ public class MagentoSync extends BaseTest {
 
         jsDown.executeScript("scroll(0,700)");
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
-       ClickableExplicit(driver,".//*[@id='order-shipping-method-summary']/a/span");
+        ClickableExplicit(driver,".//*[@id='order-shipping-method-summary']/a/span");
 //ShipMethod
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
-//        PresentExplicit(driver,".//*[@id='order-shipping-method-summary']/a/span");
+        JavascriptExecutor jsDown2 = (JavascriptExecutor) driver;
+        jsDown2.executeScript("scroll(0,400);");
+//       ClickableExplicit(driver,".//*[@id='order-shipping-method-summary']/a/span");
         driver.findElement(By.xpath(".//*[@id='order-shipping-method-summary']/a/span")).click();
         ClickableExplicit(driver,".//*[@id='s_method_flatrate_flatrate']");
-       // driver.findElement(By.xpath(".//*[@id='s_method_flatrate_flatrate']")).click();
+        // driver.findElement(By.xpath(".//*[@id='s_method_flatrate_flatrate']")).click();
 //subOrder
         driver.findElement(By.xpath(".//*[@id='submit_order_top_button']")).click();
-    }
-
-    @Test
-    public void CreteCustomers () throws InterruptedIOException, InterruptedException {
-        LoginMagento loginMagento =new LoginMagento();
-        loginMagento.login(driver, "admin", "admin123456");
-        //Thread.sleep(3000);
-        driver.findElement(By.xpath(".//*[@id='html-body']/div[4]/aside[1]/div[2]/header/button")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(".//*[@id='menu-magento-customer-customer']/a/span")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(".//*[@id='menu-magento-customer-customer']/div/ul/li[1]/a/span")).click();
-        //driver.navigate().to("http://magento-test.easyerp.com/admin/customer/index/index/key/5254ebfaca251cccfc08a3f6403b43fa34913a6a8ad3b59f972186b4c994f923/");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(".//*[@id='add']")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.name("customer[firstname]")).clear();
-        driver.findElement(By.name("customer[firstname]")).sendKeys("Bret");
-        Thread.sleep(2000);
-        driver.findElement(By.name("customer[lastname]")).clear();
-        driver.findElement(By.name("customer[lastname]")).sendKeys("Smith");
-        Thread.sleep(2000);
-
-        WebElement emailRandom = driver.findElement(By.name("customer[email]"));
-        emailRandom.click();
-        Random randomGenerator = new Random();
-        int randomInt = randomGenerator.nextInt(1000);
-        emailRandom.sendKeys("username"+ randomInt +"@gmail.com");
-        Thread.sleep(1000);
-       // driver.findElement(By.xpath(".//*[@id='save']")).click();
-//AddAdress
-        JavascriptExecutor jsUp = (JavascriptExecutor) driver;
-        jsUp.executeScript("scroll(200,0);");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(".//*[@id='tab_address']/span[1]")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(".//*[@id='container']/div/div/div[2]/div[2]/div/div[2]/fieldset/div/ul/li/button")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.name("address[new_0][firstname]")).clear();
-        driver.findElement(By.name("address[new_0][firstname]")).sendKeys("Name");
-        Thread.sleep(1000);
-        driver.findElement(By.name("address[new_0][lastname]")).clear();
-        driver.findElement(By.name("address[new_0][lastname]")).sendKeys("LastName");
-        Thread.sleep(1000);
-        driver.findElement(By.name("address[new_0][street][0]")).clear();
-        driver.findElement(By.name("address[new_0][street][0]")).sendKeys("Address");
-        Thread.sleep(1000);
-        driver.findElement(By.name("address[new_0][country_id]")).click();
-        driver.findElement(By.name(".//div/select/option[2]")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.name("address[new_0][postcode]")).clear();
-        driver.findElement(By.name("address[new_0][postcode]")).sendKeys("123456");
-        Thread.sleep(1000);
-        driver.findElement(By.name("address[new_0][telephone]")).clear();
-        driver.findElement(By.name("address[new_0][telephone]")).sendKeys("242365412312");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(".//*[@id='save']")).click();
     }
 }
 

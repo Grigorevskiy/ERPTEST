@@ -1,4 +1,4 @@
-package Methods.Login;
+package Methods.Magento;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

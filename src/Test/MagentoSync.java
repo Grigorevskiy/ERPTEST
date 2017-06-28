@@ -32,8 +32,6 @@ public class MagentoSync extends BaseTest {
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         Thread.sleep(3000);
         driver.navigate().to("https://live.easyerp.com/#easyErp/Products/list");
-//        WebDriverWait wait = new WebDriverWait(driver, 10);
-//        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[@id='loading']")));
         InvisibilityExplicit(driver,".//*[@id='loading']");
         PresentExplicitXpath(driver,".//*[@id='top-bar-createBtn']");
         driver.findElement(By.xpath(".//*[@id='product']")).clear();
@@ -59,15 +57,12 @@ public class MagentoSync extends BaseTest {
         driver.findElement(By.xpath(".//*[@id='saveBtn']")).click();
     }
 
-
-
     @Test
     public void CreateCustomer ()  throws InterruptedIOException , InterruptedException{
         LoginMagento loginMagento =new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
         MagentoCustomers magentoCustomers = new MagentoCustomers();
         magentoCustomers.CreateCustomer(driver);
-
     }
 
     @Test
@@ -76,7 +71,6 @@ public class MagentoSync extends BaseTest {
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         ChanelMagento chanelMagento = new ChanelMagento();
         chanelMagento.DeleteChanel(driver);
-
     }
 
     @Test
@@ -85,10 +79,7 @@ public class MagentoSync extends BaseTest {
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         ChanelMagento chanelMagento = new ChanelMagento();
         chanelMagento.CreateChanel(driver);
-
     }
-
-
 
     @Test
     public void CreateOrderMagento() throws InterruptedException, InterruptedIOException {
@@ -98,46 +89,26 @@ public class MagentoSync extends BaseTest {
         driver.findElement(By.xpath(".//*[@id='add']")).click();
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
 
-        JavascriptExecutor jsDown1 = (JavascriptExecutor) driver;
-        jsDown1.executeScript("scroll(0,300);");
-
-
-        ClickableExplicitXpath(driver,".//*[@id='sales_order_create_customer_grid_table']/tbody/tr[14]/td[2]");
-//        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(".//*[@id='sales_order_create_customer_grid_table']/tbody/tr[3]/td[2]")))).click();
-        //Thread.sleep(3000);
+        ClickableExplicitXpath(driver,".//*[@id='sales_order_create_customer_grid_table']/tbody/tr[2]/td[2]");
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
-//        ClickableExplicit(driver,".//*[@id='order-items']/div[1]/div/button");
+
         driver.findElement(By.xpath(".//*[@id='order-items']/div[1]/div/button")).click();
-        //Thread.sleep(2000);
         JavascriptExecutor jsDown = (JavascriptExecutor) driver;
         jsDown.executeScript("scroll(0,400);");
-        // Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='sales_order_create_search_grid_table']/tbody/tr[8]/td[2]")).click();
-
         JavascriptExecutor jsUp = (JavascriptExecutor) driver;
         jsUp.executeScript("scroll(400,0);");
-        //Thread.sleep(2000);
-
 
         PresentExplicitXpath(driver,".//div/button[@class='action-default scalable action-add action-secondary']");
-//        driver.findElement(By.xpath(".//*[@id='id_7cbd301c5b53736710337c068e67db60'][contains(@title, 'Add Selected Product(s) to Order')]")).click();
-
         jsDown.executeScript("scroll(0,700)");
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
-        ClickableExplicitXpath(driver,".//*[@id='order-shipping-method-summary']/a/span");
 //ShipMethod
+        ClickableExplicitXpath(driver,".//*[@id='order-shipping-method-summary']/a/span");
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
-        JavascriptExecutor jsDown2 = (JavascriptExecutor) driver;
-        jsDown2.executeScript("scroll(0,400);");
-//       ClickableExplicit(driver,".//*[@id='order-shipping-method-summary']/a/span");
-        driver.findElement(By.xpath(".//*[@id='order-shipping-method-summary']/a/span")).click();
-        ClickableExplicitXpath(driver,".//*[@id='s_method_flatrate_flatrate']");
-        // driver.findElement(By.xpath(".//*[@id='s_method_flatrate_flatrate']")).click();
+        PresentExplicitXpath(driver,".//*[@id='order-shipping-method-choose']/dl/dd/ul/li/label");
 //subOrder
+        InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
         driver.findElement(By.xpath(".//*[@id='submit_order_top_button']")).click();
-
-
-//        .//*[@id='container']/div/div[5]/table/tbody//div[contains(text(),'test1@mail.ru')]
     }
 }
 

@@ -27,9 +27,6 @@ public class WaitsMethod {
     }
 
 
-
-
-
     public static WebElement PresentExplicitName(WebDriver driver, String locator) {
         (new WebDriverWait(driver, 14))
                 .until(ExpectedConditions.presenceOfElementLocated(By.name(locator))).click();
@@ -39,5 +36,12 @@ public class WaitsMethod {
     public static void ClickableExplicitName(WebDriver driver, String locator) {
         (new WebDriverWait(driver, 14))
                 .until(ExpectedConditions.elementToBeClickable(By.name(locator))).click();
+    }
+
+
+    public static WebElement PresentExplicitXpathWithOutClick(WebDriver driver, String locator) {
+        (new WebDriverWait(driver, 14))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return null;
     }
 }

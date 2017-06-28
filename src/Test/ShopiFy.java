@@ -6,9 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
-import static BaseTest.Waits.WaitsMethod.ClickableExplicit;
-import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
-import static BaseTest.Waits.WaitsMethod.PresentExplicit;
+
+import static BaseTest.Waits.WaitsMethod.*;
 
 
 public class ShopiFy  extends BaseTest {
@@ -27,8 +26,8 @@ public class ShopiFy  extends BaseTest {
         Thread.sleep(2000);
                 JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("scroll(0,200);");
-        PresentExplicit(driver,"//form/div[1]/div/div[1]/div/div/div[2]/div/div[3]/div/button[2]");
-        ClickableExplicit(driver,"//div[2]/div[5]/form/div[2]/div/div[2]/div/button");
+        PresentExplicitXpath(driver,"//form/div[1]/div/div[1]/div/div/div[2]/div/div[3]/div/button[2]");
+        ClickableExplicitXpath(driver,"//div[2]/div[5]/form/div[2]/div/div[2]/div/button");
     }
 
     @Test

@@ -9,9 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 
-import static BaseTest.Waits.WaitsMethod.ClickableExplicit;
-import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
-import static BaseTest.Waits.WaitsMethod.PresentExplicit;
+import static BaseTest.Waits.WaitsMethod.*;
 
 
 public class MagentoSync extends BaseTest {
@@ -37,7 +35,7 @@ public class MagentoSync extends BaseTest {
 //        WebDriverWait wait = new WebDriverWait(driver, 10);
 //        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[@id='loading']")));
         InvisibilityExplicit(driver,".//*[@id='loading']");
-        PresentExplicit(driver,".//*[@id='top-bar-createBtn']");
+        PresentExplicitXpath(driver,".//*[@id='top-bar-createBtn']");
         driver.findElement(By.xpath(".//*[@id='product']")).clear();
         driver.findElement(By.xpath(".//*[@id='product']")).sendKeys("MacBook");
         InvisibilityExplicit(driver,".//*[@id='loading']");
@@ -50,9 +48,8 @@ public class MagentoSync extends BaseTest {
         InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
 //CreateList
-        InvisibilityExplicit(driver,".//*[@id='loading']");
-        ClickableExplicit(driver,".//*[@id='createEmployeeForm']/ul/li[4]/a");
-//        driver.findElement(By.xpath(".//*[@id='createEmployeeForm']/ul/li[4]/a")).click();
+        InvisibilityExplicit(driver,"//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='createEmployeeForm']/ul/li[4]/a");
         driver.findElement(By.xpath("//div/div/div[1]/div/dl[1]/div[2]/dd/input")).clear();
         driver.findElement(By.xpath("//div/div/div[1]/div/dl[1]/div[2]/dd/input")).sendKeys("10");
         driver.findElement(By.xpath("//div/div/div/div[1]/div/dl[2]/div[1]/dd/input")).clear();
@@ -105,7 +102,7 @@ public class MagentoSync extends BaseTest {
         jsDown1.executeScript("scroll(0,300);");
 
 
-        ClickableExplicit(driver,".//*[@id='sales_order_create_customer_grid_table']/tbody/tr[14]/td[2]");
+        ClickableExplicitXpath(driver,".//*[@id='sales_order_create_customer_grid_table']/tbody/tr[14]/td[2]");
 //        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(".//*[@id='sales_order_create_customer_grid_table']/tbody/tr[3]/td[2]")))).click();
         //Thread.sleep(3000);
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
@@ -122,19 +119,19 @@ public class MagentoSync extends BaseTest {
         //Thread.sleep(2000);
 
 
-        PresentExplicit(driver,".//div/button[@class='action-default scalable action-add action-secondary']");
+        PresentExplicitXpath(driver,".//div/button[@class='action-default scalable action-add action-secondary']");
 //        driver.findElement(By.xpath(".//*[@id='id_7cbd301c5b53736710337c068e67db60'][contains(@title, 'Add Selected Product(s) to Order')]")).click();
 
         jsDown.executeScript("scroll(0,700)");
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
-        ClickableExplicit(driver,".//*[@id='order-shipping-method-summary']/a/span");
+        ClickableExplicitXpath(driver,".//*[@id='order-shipping-method-summary']/a/span");
 //ShipMethod
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
         JavascriptExecutor jsDown2 = (JavascriptExecutor) driver;
         jsDown2.executeScript("scroll(0,400);");
 //       ClickableExplicit(driver,".//*[@id='order-shipping-method-summary']/a/span");
         driver.findElement(By.xpath(".//*[@id='order-shipping-method-summary']/a/span")).click();
-        ClickableExplicit(driver,".//*[@id='s_method_flatrate_flatrate']");
+        ClickableExplicitXpath(driver,".//*[@id='s_method_flatrate_flatrate']");
         // driver.findElement(By.xpath(".//*[@id='s_method_flatrate_flatrate']")).click();
 //subOrder
         driver.findElement(By.xpath(".//*[@id='submit_order_top_button']")).click();

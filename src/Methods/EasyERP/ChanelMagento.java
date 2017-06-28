@@ -31,7 +31,6 @@ public class ChanelMagento {
         driver.findElement(By.xpath(".//*[@id='channelName']")).clear();
         driver.findElement(By.xpath(".//*[@id='channelName']")).sendKeys("Magento Test Channel");
         ClickableExplicitXpath(driver, ".//*[@id='continueBtn']");
-//        driver.findElement(By.xpath(".//*[@id='baseURL']")).clear();
         driver.findElement(By.xpath(".//*[@id='baseURL']")).sendKeys("http://magento-test.easyerp.com");
         driver.findElement(By.xpath(".//*[@id='apiuser']")).clear();
         driver.findElement(By.xpath(".//*[@id='apiuser']")).sendKeys("admin");
@@ -54,7 +53,8 @@ public class ChanelMagento {
         driver.findElement(By.xpath(".//*[@id='58109ae869b3249417f74baf']")).click();
         ClickableExplicitXpath(driver,".//*[@id='dialogContainer']/div[2]/div[3]/div/button[1]");
 
-Thread.sleep(3000);
+
+        Thread.sleep(3000);
         driver.navigate().to(MagentoChanel);
 
     }

@@ -16,8 +16,6 @@ public class LoginShopify {
         driver.findElement(By.xpath(".//*[@id='Login']")).sendKeys("norbert.madyar@thinkmobiles.com");
         driver.findElement(By.id("Password")).clear();
         driver.findElement(By.id("Password")).sendKeys("123456qwerty");
-//        WebDriverWait wait = new WebDriverWait(driver, 10);
-//        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("commit")))).click();
         driver.findElement(By.name("commit")).click();
     }
 }

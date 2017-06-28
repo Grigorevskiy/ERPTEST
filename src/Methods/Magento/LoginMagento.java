@@ -8,7 +8,6 @@ public class LoginMagento {
     public void login (WebDriver driver, String email, String pass) throws InterruptedException {
         String MagentoURL = "http://magento-test.easyerp.com/admin";
         driver.get(MagentoURL);
-      //  Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='username']")).clear();
         driver.findElement(By.xpath(".//*[@id='username']")).sendKeys("admin");
         driver.findElement(By.xpath(".//*[@id='login']")).clear();

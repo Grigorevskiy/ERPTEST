@@ -91,10 +91,6 @@ public class PurchaseOrder extends BaseTest{
         driver.findElement(By.xpath("//div[2]/table/tbody/tr[1]/td[2]")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/fieldset/div/ul/li/button[4]")).click();
-
-        Thread.sleep(4000);
-        BalanceSheet balanceSheet = new BalanceSheet();
-        balanceSheet.VerifyBalanceSheet(driver);
     }
 
     @Test(priority=2)

@@ -23,7 +23,7 @@ public class MagentoCreateOrderAndCustomer {
         driver.findElement(By.xpath(".//*[@id='order-items']/div[1]/div/button")).click();
         JavascriptExecutor jsDown = (JavascriptExecutor) driver;
         jsDown.executeScript("scroll(0,400);");
-        PresentExplicitXpath(driver,".//*[@id='sales_order_create_search_grid_table']/tbody/tr[8]/td[2]");
+        PresentExplicitXpath(driver,".//*[@id='sales_order_create_search_grid_table']/tbody/tr[9]/td[2]");
         JavascriptExecutor jsUp = (JavascriptExecutor) driver;
         jsUp.executeScript("scroll(400,0);");
         ClickableExplicitXpath(driver,".//div/button[@title='Add Selected Product(s) to Order']");

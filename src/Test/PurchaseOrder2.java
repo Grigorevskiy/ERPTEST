@@ -7,6 +7,10 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 
+import static BaseTest.Waits.WaitsMethod.ClickableExplicitXpath;
+import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
+import static BaseTest.Waits.WaitsMethod.PresentExplicitXpath;
+
 
 public class PurchaseOrder2 extends BaseTest {
     @Test(priority=1)
@@ -71,8 +75,11 @@ public class PurchaseOrder2 extends BaseTest {
         driver.navigate().to(URL);
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div/fieldset/div[1]/ul/li[2]/a")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[1]/ul/li[2]/ul/li[1]/a/span")).click();
+//        Thread.sleep(1000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,"//div[1]/ul/li[2]/ul/li[1]/a/span");
+//        driver.findElement(By.xpath("//div[1]/ul/li[2]/ul/li[1]/a/span")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).clear();
         Thread.sleep(1000);
@@ -81,8 +88,10 @@ public class PurchaseOrder2 extends BaseTest {
 
         //CreateInvoice
         driver.navigate().to(URL);
-        Thread.sleep(4500);
-        driver.findElement(By.xpath("//div/fieldset/div[1]/ul/button")).click();
+        Thread.sleep(4000);
+        PresentExplicitXpath(driver,"//div/fieldset/div[1]/ul/button");
+
+//        driver.findElement(By.xpath("//div/fieldset/div[1]/ul/button")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='createPersonsForm']/fieldset/div[1]/ul/button")).click();
 
@@ -91,10 +100,6 @@ public class PurchaseOrder2 extends BaseTest {
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//div/ul/li/button[4]")).click();
-
-        Thread.sleep(3000);
-        BalanceSheet balanceSheet = new BalanceSheet();
-        balanceSheet.VerifyBalanceSheet(driver);
     }
 
     @Test(priority=2)

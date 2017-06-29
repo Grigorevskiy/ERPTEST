@@ -36,8 +36,8 @@ public class PurchaseOrder3 extends BaseTest {
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
         Thread.sleep(2000);
         String URLinvoice = driver.getCurrentUrl();
-        InvisibilityExplicit(driver,".//*[@id='loading']");
-
+//        InvisibilityExplicit(driver,".//*[@id='loading']");
+Thread.sleep(3000);
         driver.findElement(By.xpath("//div/ul/li/button[4]")).click();
 
         Thread.sleep(3000);

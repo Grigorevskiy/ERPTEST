@@ -17,6 +17,9 @@ public class AddProduct {
         InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath(".//*[@id='submenuHolder']/nav/ul/li[7]/div/ul/li[2]/a")).click();
         InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        driver.findElement(By.xpath(".//*[@id='submenuHolder']/nav/ul/li[7]/div/ul/li[2]/a")).click();
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='top-bar-createBtn']");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         InvisibilityExplicit(driver,".//*[@id='loading']");
@@ -33,6 +36,8 @@ public class AddProduct {
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
 //CreateList
         InvisibilityExplicit(driver,"//*[@id='loading']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
         ClickableExplicitXpath(driver,".//*[@id='createEmployeeForm']/ul/li[4]/a");
         driver.findElement(By.xpath("//div/div/div[1]/div/dl[1]/div[2]/dd/input")).clear();
         driver.findElement(By.xpath("//div/div/div[1]/div/dl[1]/div[2]/dd/input")).sendKeys("10");

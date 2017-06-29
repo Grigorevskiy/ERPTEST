@@ -1,7 +1,7 @@
 package Test;
 import BaseTest.BaseTest;
 import Methods.EasyERP.AddProduct;
-import Methods.EasyERP.ChanelMagento;
+import Methods.Magento.ChanelMagento;
 import Methods.EasyERP.LoginEasyErp;
 import Methods.Magento.LoginMagento;
 import Methods.Magento.MagentoCreateOrderAndCustomer;
@@ -15,7 +15,7 @@ import static BaseTest.Waits.WaitsMethod.*;
 
 
 public class MagentoSync extends BaseTest {
-    @Test
+    @Test(priority = 1)
     public void DeleteOrders() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
@@ -27,7 +27,7 @@ public class MagentoSync extends BaseTest {
         driver.findElement(By.xpath("//div[2]/div[1]/div/ul/li[1]/span")).click();
     }
 
-    @Test
+    @Test(priority = 2)
     public void AddProductERP() throws InterruptedIOException, InterruptedException {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
@@ -35,7 +35,7 @@ public class MagentoSync extends BaseTest {
         addProduct.AddProductERP(driver);
     }
 
-    @Test
+    @Test(priority = 3)
     public void CreateOrderAndCustomerMagento1() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
@@ -43,7 +43,7 @@ public class MagentoSync extends BaseTest {
         magentoCreateOrder.CreateOrder(driver);
     }
 
-    @Test
+    @Test(priority = 4)
     public void CreateOrderAndCustomerMagento2() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
@@ -53,7 +53,7 @@ public class MagentoSync extends BaseTest {
         PresentExplicitXpath(driver,".//*[@id='order-view-hold-button']");
     }
 
-    @Test
+    @Test(priority = 5)
     public void CreateOrderAndCustomerMagento3() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
@@ -68,7 +68,7 @@ public class MagentoSync extends BaseTest {
         Assert.assertEquals("The invoice has been created.", strng);
     }
 
-    @Test
+    @Test(priority = 6)
     public void DeleteChanelMagento() throws InterruptedException, InterruptedIOException {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
@@ -76,7 +76,7 @@ public class MagentoSync extends BaseTest {
         chanelMagento.DeleteChanel(driver);
     }
 
-    @Test
+    @Test(priority = 7)
     public void CreateMagentoChannel() throws InterruptedException, InterruptedIOException {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
@@ -84,7 +84,7 @@ public class MagentoSync extends BaseTest {
         chanelMagento.CreateChanel(driver);
     }
 
-    @Test
+    @Test(priority = 8)
     public void CreateOrderAndCustomerMagentoSecond1() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
@@ -92,7 +92,7 @@ public class MagentoSync extends BaseTest {
         magentoCreateOrder.CreateOrder(driver);
     }
 
-    @Test
+    @Test(priority = 9)
     public void CreateOrderAndCustomerMagentoSecond2() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
@@ -102,7 +102,7 @@ public class MagentoSync extends BaseTest {
         PresentExplicitXpath(driver,".//*[@id='order-view-hold-button']");
     }
 
-    @Test
+    @Test(priority = 10)
     public void CreateOrderAndCustomerMagentoSecond3() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");

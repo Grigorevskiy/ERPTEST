@@ -7,7 +7,7 @@ import java.io.InterruptedIOException;
 public class LoginEasyErp {
     public void login (WebDriver driver, String email, String pass) throws InterruptedIOException, InterruptedException {
         driver.navigate().to("https://live.easyerp.com/#login");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.findElement(By.name("ulogin")).clear();
         driver.findElement(By.name("ulogin")).sendKeys("grigorevskiiy@gmail.com");
         driver.findElement(By.id("upass")).clear();

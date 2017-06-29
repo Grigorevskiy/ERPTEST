@@ -10,20 +10,16 @@ import static BaseTest.Waits.WaitsMethod.PresentExplicitXpath;
 
 public class AddProduct {
     public void AddProductERP(WebDriver driver) throws InterruptedIOException, InterruptedException {
-//        Thread.sleep(3000);
-//        InvisibilityExplicit(driver,".//*[@id='loading']");
-        driver.navigate().to("https://live.easyerp.com/#easyErp/Products/list");
-        Thread.sleep(3000);
-//        Thread.sleep(2000);
-//        PresentExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[7]/i");
-//        InvisibilityExplicit(driver,".//*[@id='loading']");
-//
-//        ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[7]/div/ul/li[2]/a");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-        PresentExplicitXpath(driver,".//*[@id='top-bar-createBtn']");
-//        driver.findElement(By.xpath(".//*[@id='top-bar-createBtn']")).click();
+        ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[7]/i");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
+        ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[7]/div/ul/li[2]/a");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        driver.findElement(By.xpath(".//*[@id='submenuHolder']/nav/ul/li[7]/div/ul/li[2]/a")).click();
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='top-bar-createBtn']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath(".//*[@id='product']")).clear();
         driver.findElement(By.xpath(".//*[@id='product']")).sendKeys("MacBook");
         InvisibilityExplicit(driver,".//*[@id='loading']");

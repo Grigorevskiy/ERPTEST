@@ -11,7 +11,6 @@ import static BaseTest.Waits.WaitsMethod.PresentExplicitXpath;
 
 
 
-
 public class MagentoCreateOrderAndCustomer {
     public void CreateOrder(WebDriver driver) throws InterruptedException, InterruptedIOException {
         PresentExplicitXpath(driver,".//*[@id='menu-magento-sales-sales']/a/span");

@@ -9,7 +9,7 @@ import java.io.InterruptedIOException;
 
 
 public class PurchaseOrder2 extends BaseTest {
-    @Test
+    @Test(priority=1)
     public void CreateOrder2() throws InterruptedException, InterruptedIOException {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
@@ -97,7 +97,7 @@ public class PurchaseOrder2 extends BaseTest {
         balanceSheet.VerifyBalanceSheet(driver);
     }
 
-    @Test
+    @Test(priority=2)
     public void BalanceSheet () throws InterruptedException, InterruptedIOException{
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");

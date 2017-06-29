@@ -7,10 +7,11 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 
+import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
 
 
 public class PurchaseOrder3 extends BaseTest {
-    @Test
+    @Test(priority=1)
     public void CreateOrder () throws InterruptedException , InterruptedIOException {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
@@ -35,6 +36,8 @@ public class PurchaseOrder3 extends BaseTest {
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
         Thread.sleep(2000);
         String URLinvoice = driver.getCurrentUrl();
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
         driver.findElement(By.xpath("//div/ul/li/button[4]")).click();
 
         Thread.sleep(3000);
@@ -58,13 +61,9 @@ public class PurchaseOrder3 extends BaseTest {
         driver.findElement(By.xpath("//div/fieldset/div/ul/li[2]/ul/li[1]/a/span")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='create-payment-dialog']")).click();
-
-        Thread.sleep(3000);
-        BalanceSheet balanceSheet = new BalanceSheet();
-        balanceSheet.VerifyBalanceSheet(driver);
     }
 
-    @Test
+    @Test(priority=2)
     public void BalanceSheet () throws InterruptedException, InterruptedIOException{
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");

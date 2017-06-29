@@ -3,6 +3,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import java.io.InterruptedIOException;
 
+import static BaseTest.Waits.WaitsMethod.ClickableExplicitXpath;
+import static BaseTest.Waits.WaitsMethod.PresentExplicitXpath;
 
 
 public class CreatingOrder {
@@ -39,7 +41,10 @@ public class CreatingOrder {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//tr[5]/td[1]/div/div/a")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath(".//*[@id='5898663372c8e19c34cd691b']/b")).click();
+        ClickableExplicitXpath(driver, ".//*[@id='content']/ul/li[11]/a[2]");
+
+        PresentExplicitXpath(driver,".//*[@id='5898663372c8e19c34cd691b']/b");
+//        driver.findElement(By.xpath(".//*[@id='5898663372c8e19c34cd691b']/b")).click();
 
         driver.findElement(By.id("discount")).clear();
         Thread.sleep(2000);

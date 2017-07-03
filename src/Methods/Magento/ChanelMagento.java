@@ -23,7 +23,12 @@ public class ChanelMagento {
 //        InvisibilityExplicit(driver,".//*[@id='loading']");
 
 //        PresentExplicitXpath(driver,".//*[@id='ui-id-7']/button");
-        driver.findElement(By.cssSelector(".removeChannelButtons.btn.blue.slim")).click();
+        Thread.sleep(2000);
+
+
+//        driver.findElement(By.cssSelector(".removeChannelButtons.btn.blue.slim")).click();
+                driver.switchTo().alert().accept();
+
         InvisibilityExplicit(driver,".//*[@id='loading']");
 //        ClickableExplicitXpath(driver,".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
 //        InvisibilityExplicit(driver,".//*[@id='loading']");
@@ -55,7 +60,7 @@ public class ChanelMagento {
         Thread.sleep(3000);
         driver.navigate().to(MagentoChanel);
         InvisibilityExplicit(driver,".//*[@id='loading']");
-        PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[1]/div/span[3]");
+        PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[1]/div/span[2]");
         ClickableExplicitXpath(driver, ".//*[@id='channelLogoContainer']/li[1]/img");
 
         driver.findElement(By.xpath(".//*[@id='channelName']")).clear();
@@ -86,5 +91,9 @@ public class ChanelMagento {
         InvisibilityExplicit(driver,".//*[@id='loading']");
 
         PresentExplicitXpath(driver,".//*[@id='content-holder']/div[1]/div/span[1]");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,".//*[@id='content-holder']/div[2]/div/div[1]/div[1]/div/div");
+
     }
 }

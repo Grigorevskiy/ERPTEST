@@ -2,7 +2,11 @@ package Methods.Magento;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import java.io.InterruptedIOException;
+import java.util.List;
+
 import static BaseTest.Waits.WaitsMethod.*;
 
 
@@ -16,11 +20,30 @@ public class ChanelMagento {
         PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]/span");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         PresentExplicitXpath(driver, ".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]");
-        PresentExplicitXpath(driver,".//*[@id='ui-id-7']/button");
+//        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+//        PresentExplicitXpath(driver,".//*[@id='ui-id-7']/button");
+        driver.findElement(By.cssSelector(".removeChannelButtons.btn.blue.slim")).click();
         InvisibilityExplicit(driver,".//*[@id='loading']");
-        ClickableExplicitXpath(driver,".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
-        InvisibilityExplicit(driver,".//*[@id='loading']");
-        ClickableExplicitXpath(driver,".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[1]");
+//        ClickableExplicitXpath(driver,".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
+//        InvisibilityExplicit(driver,".//*[@id='loading']");
+//        ClickableExplicitXpath(driver,".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[1]");
+//        InvisibilityExplicit(driver,".//*[@id='loading']");
+//
+//        ClickableExplicitXpath(driver,".//*[@id='ui-id-38']/button");
+//        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+
+        List<WebElement> ClickToBuild = driver.findElements(By.xpath(".//*[@id='listTable']//a[2]"));
+        Integer size = ClickToBuild.size();
+        for (int i = 0; i< size;i++) {
+            InvisibilityExplicit(driver,".//*[@id='loading']");
+
+            driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]/a[2]")).click();
+        }
+
+
+
 //        .//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[3]
 //        .//*[@id='unlinked-saveBtn']
 //        .//*[@id='resolve-saveBtn']

@@ -5,13 +5,15 @@ import org.testng.Assert;
 
 import java.io.InterruptedIOException;
 
+import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
 
 
 public class BalanceSheet {
     public void VerifyBalanceSheet (WebDriver driver) throws InterruptedIOException,InterruptedException{
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
         driver.navigate().to("https://live.easyerp.com/#easyErp/balanceSheet/list");
-//        Thread.sleep(2000);
         String TotalAssets = driver.findElement(By.xpath(".//*[@id='totalAssetsSumm']/span")).getText();
         String TotalLiabilities = driver.findElement(By.xpath(".//*[@id='totalSumm']/span")).getText();
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 
+import static BaseTest.Waits.WaitsMethod.ClickableExplicitXpath;
 import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
 
 
@@ -16,51 +17,47 @@ public class PurchaseOrder3 extends BaseTest {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
 
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         CreatingOrder creatingOrder = new CreatingOrder();
         creatingOrder.CreateOrder(driver);
 
-        Thread.sleep(3000);
-        driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
-        Thread.sleep(2000);
+
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='listTable']/tr[1]/td[2]");
         String URLorder = driver.getCurrentUrl();
 
-        //driver.navigate().to(URLorder);
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//div/fieldset/div[1]/ul/button")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(".//*[@id='createPersonsForm']/fieldset/div[1]/ul/button")).click();
-
-        Thread.sleep(3000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,"//div/fieldset/div[1]/ul/button");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/button");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         //Approve
-        driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[2]")).click();
-        Thread.sleep(2000);
+        ClickableExplicitXpath(driver,".//*[@id='listTable']/tr[1]/td[2]");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
         String URLinvoice = driver.getCurrentUrl();
-//        InvisibilityExplicit(driver,".//*[@id='loading']");
-Thread.sleep(3000);
-        driver.findElement(By.xpath("//div/ul/li/button[4]")).click();
-
-        Thread.sleep(3000);
-        //Delivery
+        ClickableExplicitXpath(driver,"//div/ul/li/button[4]");
         driver.navigate().to(URLorder);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(".//*[@id='editButton']")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(".//*[@id='createPersonsForm']/fieldset/div[1]/ul[1]/li[3]/a")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[1]/ul[1]/li[3]/ul/li[1]/a/span[1]")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//div[3]/div/button[1]")).click();
-
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='editButton']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='editButton']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul[1]/li[3]/span");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul[1]/li[3]/ul/li[1]/a/span[2]");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='goodsInNotesSaveBtn']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         //Payment
-        Thread.sleep(2000);
         driver.navigate().to(URLinvoice);
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//div/fieldset/div/ul/li[2]/a")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//div/fieldset/div/ul/li[2]/ul/li[1]/a/span")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(".//*[@id='create-payment-dialog']")).click();
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,"//div/fieldset/div/ul/li[2]/a");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,"//div/fieldset/div/ul/li[2]/ul/li[1]/a/span");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='create-payment-dialog']");
     }
 
     @Test(priority=2)

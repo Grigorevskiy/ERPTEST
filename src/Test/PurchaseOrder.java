@@ -25,18 +25,16 @@ public class PurchaseOrder extends BaseTest{
 
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,"//tbody/tr[1]/td[2]");
+
         String URL = driver.getCurrentUrl();
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         driver.findElement(By.xpath("//div/fieldset/div[1]/ul/li[2]/a")).click();
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,"//div[1]/ul/li[2]/ul/li[1]/a/span");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).clear();
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).sendKeys("6.125");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         driver.findElement(By.xpath("//div[3]/div/button[1]")).click();
 
         Thread.sleep(2000);
@@ -55,42 +53,35 @@ public class PurchaseOrder extends BaseTest{
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,"//div/fieldset/div[1]/ul/li[2]/a");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,"//div[1]/ul/li[2]/ul/li[1]/a/span");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).clear();
-        Thread.sleep(1000);
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).sendKeys("6.125");
         ClickableExplicitXpath(driver,"//div[3]/div/button[1]");
 
         Thread.sleep(2000);
         driver.navigate().to(URL);
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,"//div/fieldset/div[1]/ul/li[2]/a");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,"//div[1]/ul/li[2]/ul/li[1]/a/span");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).clear();
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).sendKeys("6.125");
         ClickableExplicitXpath(driver,"//div[3]/div/button[1]");
+
         Thread.sleep(2000);
         driver.navigate().to(URL);
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,"//div/fieldset/div[1]/ul/button");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/li[4]/span");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/li[4]/ul/li[1]/a/span[1]");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath(".//*[@id='goodsInNotesSaveBtn']")).click();
 
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver, "//div[2]/div/fieldset/div[1]/ul/button");
         InvisibilityExplicit(driver,".//*[@id='loading']");
 
@@ -99,7 +90,6 @@ public class PurchaseOrder extends BaseTest{
 
         ClickableExplicitXpath(driver,"//div[2]/table/tbody/tr[1]/td[2]");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,"//div/fieldset/div/ul/li/button[4]");
     }
 

@@ -18,10 +18,10 @@ public class ShopiFy  extends BaseTest {
         driver.findElement(By.xpath("//aside[@id='AppFrameAside']/div[2]/div[2]/div/div/nav/ul/li[2]/a/span")).click();
         driver.findElement(By.xpath("(//a[contains(text(),'Create order')])[2]")).click();
         driver.findElement(By.xpath("//input[@id='']")).clear();
-        driver.findElement(By.xpath("//input[@id='']")).sendKeys("I");
+        driver.findElement(By.xpath("//input[@id='']")).sendKeys("V");
         driver.findElement(By.id("product_search_input")).clear();
-        driver.findElement(By.id("product_search_input")).sendKeys("Iphone");
-        driver.findElement(By.xpath(".//*[@id='product_checkbox_11210373252']")).click();
+        driver.findElement(By.id("product_search_input")).sendKeys("Vinsic");
+        driver.findElement(By.xpath(".//*[@id='product_picker_modal']/div[3]/div/ul/li/div/div/div[3]")).click();
         driver.findElement(By.id("add-products")).click();
         Thread.sleep(2000);
                 JavascriptExecutor js = (JavascriptExecutor) driver;

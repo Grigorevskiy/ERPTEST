@@ -7,6 +7,9 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
 
+import static BaseTest.Waits.WaitsMethod.ClickableExplicitXpath;
+import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
+import static BaseTest.Waits.WaitsMethod.PresentExplicitXpath;
 import static org.testng.AssertJUnit.assertEquals;
 
 
@@ -16,81 +19,88 @@ public class PurchaseOrder extends BaseTest{
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
 
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         CreatingOrder creatingOrder = new CreatingOrder();
         creatingOrder.CreateOrder(driver);
 
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//tbody/tr[1]/td[2]")).click();
-
-        Thread.sleep(1000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,"//tbody/tr[1]/td[2]");
         String URL = driver.getCurrentUrl();
-        Thread.sleep(2000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
         driver.findElement(By.xpath("//div/fieldset/div[1]/ul/li[2]/a")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//div[1]/ul/li[2]/ul/li[1]/a/span")).click();
-        Thread.sleep(2000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,"//div[1]/ul/li[2]/ul/li[1]/a/span");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).clear();
-        Thread.sleep(2000);
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).sendKeys("6.125");
-        Thread.sleep(2000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
         driver.findElement(By.xpath("//div[3]/div/button[1]")).click();
 
         Thread.sleep(2000);
         driver.navigate().to(URL);
-        Thread.sleep(3000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath("//div/fieldset/div[1]/ul/li[2]/a")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//div[1]/ul/li[2]/ul/li[1]/a/span")).click();
-        Thread.sleep(1000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,"//div[1]/ul/li[2]/ul/li[1]/a/span");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).clear();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//div/div[1]/div[2]/input")).sendKeys("6.125");
-        driver.findElement(By.xpath("//div[3]/div/button[1]")).click();
-
-        Thread.sleep(2000);
-        driver.navigate().to(URL);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//div/fieldset/div[1]/ul/li[2]/a")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//div[1]/ul/li[2]/ul/li[1]/a/span")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//div/div[1]/div[2]/input")).clear();
-        Thread.sleep(1000);
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).sendKeys("6.125");
         driver.findElement(By.xpath("//div[3]/div/button[1]")).click();
 
         Thread.sleep(2000);
         driver.navigate().to(URL);
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//div/fieldset/div[1]/ul/li[2]/a")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[1]/ul/li[2]/ul/li[1]/a/span")).click();
-        Thread.sleep(1000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        ClickableExplicitXpath(driver,"//div/fieldset/div[1]/ul/li[2]/a");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,"//div[1]/ul/li[2]/ul/li[1]/a/span");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).clear();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//div/div[1]/div[2]/input")).sendKeys("6.125");
-        driver.findElement(By.xpath("//div[3]/div/button[1]")).click();
+        ClickableExplicitXpath(driver,"//div[3]/div/button[1]");
 
         Thread.sleep(2000);
         driver.navigate().to(URL);
-        Thread.sleep(4000);
-        driver.findElement(By.xpath("//div/fieldset/div[1]/ul/button")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//fieldset/div[1]/ul/li[5]/a")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//div[1]/ul/li[5]/ul/li[1]/a/span[1]")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//div[2]/div[3]/div/button[1]")).click();
+        InvisibilityExplicit(driver,".//*[@id='loading']");
 
+        ClickableExplicitXpath(driver,"//div/fieldset/div[1]/ul/li[2]/a");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,"//div[1]/ul/li[2]/ul/li[1]/a/span");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        driver.findElement(By.xpath("//div/div[1]/div[2]/input")).clear();
+        driver.findElement(By.xpath("//div/div[1]/div[2]/input")).sendKeys("6.125");
+        ClickableExplicitXpath(driver,"//div[3]/div/button[1]");
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//div[2]/div/fieldset/div[1]/ul/button")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//div/div/form/fieldset/div[1]/ul/button")).click();
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//div[2]/table/tbody/tr[1]/td[2]")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//div/fieldset/div/ul/li/button[4]")).click();
+        driver.navigate().to(URL);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,"//div/fieldset/div[1]/ul/button");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/li[4]/span");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/li[4]/ul/li[1]/a/span[1]");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+        driver.findElement(By.xpath(".//*[@id='goodsInNotesSaveBtn']")).click();
+
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver, "//div[2]/div/fieldset/div[1]/ul/button");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/button[2]");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,"//div[2]/table/tbody/tr[1]/td[2]");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver,"//div/fieldset/div/ul/li/button[4]");
     }
 
     @Test(priority=2)

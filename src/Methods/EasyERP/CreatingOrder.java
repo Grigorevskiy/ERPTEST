@@ -43,8 +43,8 @@ public class CreatingOrder {
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,"//div/table/tbody/tr[3]/td[1]/div/div/a");
 
-        InvisibilityExplicit(driver,".//*[@id='loading']");
-        ClickableExplicitXpath(driver,".//*[@id='content']/ul/li[11]/a[2]");
+//        InvisibilityExplicit(driver,".//*[@id='loading']");
+//        ClickableExplicitXpath(driver,".//*[@id='content']/ul/li[11]/a[2]");
 
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='5898663372c8e19c34cd6919']/b");

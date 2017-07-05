@@ -16,9 +16,9 @@ public class ChanelMagento {
     public void DeleteChanel(WebDriver driver) throws InterruptedException, InterruptedIOException {
         Thread.sleep(3000);
         driver.navigate().to(MagentoChanel);
-        InvisibilityExplicit(driver,".//*[@id='loading']");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
         PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]/span");
-        InvisibilityExplicit(driver,".//*[@id='loading']");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
         PresentExplicitXpath(driver, ".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]");
 //        InvisibilityExplicit(driver,".//*[@id='loading']");
 
@@ -27,9 +27,20 @@ public class ChanelMagento {
 
 
 //        driver.findElement(By.cssSelector(".removeChannelButtons.btn.blue.slim")).click();
-                driver.switchTo().alert().accept();
+//                driver.switchTo().alert().accept();
 
-        InvisibilityExplicit(driver,".//*[@id='loading']");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
+        ClickableExplicitXpath(driver, ".//*[@id='ui-id-3']/button");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
+        PresentExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[2]");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
+
+        ClickableExplicitXpath(driver, ".//*[@id='resolve-saveBtn']");
+
+
+
 //        ClickableExplicitXpath(driver,".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
 //        InvisibilityExplicit(driver,".//*[@id='loading']");
 //        ClickableExplicitXpath(driver,".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[1]");
@@ -38,14 +49,19 @@ public class ChanelMagento {
 //        ClickableExplicitXpath(driver,".//*[@id='ui-id-38']/button");
 //        InvisibilityExplicit(driver,".//*[@id='loading']");
 
+//
+//        List<WebElement> ClickToBuild = driver.findElements(By.xpath(".//*[@id='listTable']//a[2]"));
+//        Integer size = ClickToBuild.size();
+//        for (int i = 0; i< size;i++) {
+//            InvisibilityExplicit(driver,".//*[@id='loading']");
+//
+//            driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]/a[2]")).click();
+//    }
+                driver.switchTo().alert().accept();
 
-        List<WebElement> ClickToBuild = driver.findElements(By.xpath(".//*[@id='listTable']//a[2]"));
-        Integer size = ClickToBuild.size();
-        for (int i = 0; i< size;i++) {
-            InvisibilityExplicit(driver,".//*[@id='loading']");
 
-            driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]/a[2]")).click();
-        }
+
+    }
 
 
 
@@ -54,7 +70,6 @@ public class ChanelMagento {
 //        .//*[@id='resolve-saveBtn']
 
         //        driver.switchTo().alert().accept();
-    }
 
     public void CreateChanel(WebDriver driver) throws InterruptedIOException, InterruptedException {
         Thread.sleep(3000);

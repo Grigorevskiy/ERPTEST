@@ -37,7 +37,8 @@ public class ShopiFy  extends BaseTest {
         Thread.sleep(3000);
         driver.navigate().to("https://live.easyerp.com/#easyErp/integrations/shopify");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-        driver.findElement(By.xpath("html/body/div[4]/div[4]/div[2]/div[1]/div/span[1]")).click();
+        ClickableExplicitXpath(driver,"html/body/div[4]/div[4]/div[2]/div[1]/div/span[1]");
+//        driver.findElement(By.xpath("html/body/div[4]/div[4]/div[2]/div[1]/div/span[1]")).click();
         String ordresValue = driver.findElement(By.xpath(".//*[@id='content-holder']/div[2]/div/div[4]/div[2]/div[2]/span")).getText();
         int waitTo = 0;
         do{

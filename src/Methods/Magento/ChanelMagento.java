@@ -32,25 +32,11 @@ public class ChanelMagento {
             InvisibilityExplicit(driver, ".//*[@id='loading']");
             ClickableExplicitXpath(driver, ".//*[@id='ui-id-3']/button");
             InvisibilityExplicit(driver, ".//*[@id='loading']");
-
-
-//            Thread.sleep(4000);
-//                    ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
-//        PresentExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[2]");
-//        InvisibilityExplicit(driver, ".//*[@id='loading']");
-//            driver.navigate().to(MagentoChanel);
-//            InvisibilityExplicit(driver, ".//*[@id='loading']");
-//            PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]/span");
-//            InvisibilityExplicit(driver, ".//*[@id='loading']");
-//            PresentExplicitXpath(driver, ".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]");
-
-
             Thread.sleep(4000);
             ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
             ClickableExplicitXpath(driver,".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[1]");
             PresentExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[2]");
             InvisibilityExplicit(driver, ".//*[@id='loading']");
-
             Thread.sleep(2000);
 //            if (0 != driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[3]/a[2]")).size()) {
 
@@ -66,11 +52,7 @@ public class ChanelMagento {
                 driver.findElement(By.xpath(".//*[@id='sku']")).sendKeys("ewfwe");
                 ClickableExplicitXpath(driver, ".//*[@id='buildProduct']");
                 InvisibilityExplicit(driver, ".//*[@id='loading']");
-
                 ClickableExplicitXpath(driver, ".//*[@id='resolve-saveBtn']");
-
-
-
                 InvisibilityExplicit(driver, ".//*[@id='loading']");
 Thread.sleep(3000);
                 driver.navigate().to(MagentoChanel);
@@ -79,42 +61,25 @@ Thread.sleep(3000);
                 InvisibilityExplicit(driver, ".//*[@id='loading']");
                 PresentExplicitXpath(driver, ".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]");
                 Thread.sleep(2000);
-//                driver.switchTo().alert().accept();
-
-                act.sendKeys(Keys.ENTER);
+                driver.switchTo().alert().accept();
 
             }else ClickableExplicitXpath(driver, ".//*[@id='resolve-saveBtn']");
-//                InvisibilityExplicit(driver, ".//*[@id='loading']");
-//                PresentExplicitXpath(driver, ".//*[@id='resolve-saveBtn']");
-//            }else
-//            ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
-//            PresentExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[2]");
-//            InvisibilityExplicit(driver, ".//*[@id='loading']");
-
-
-//                PresentExplicitXpath(driver, ".//*[@id='resolve-saveBtn']");
-//                InvisibilityExplicit(driver, ".//*[@id='loading']");
-
                 driver.navigate().to(MagentoChanel);
                 InvisibilityExplicit(driver, ".//*[@id='loading']");
                 PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]/span");
                 InvisibilityExplicit(driver, ".//*[@id='loading']");
                 PresentExplicitXpath(driver, ".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]");
                 Thread.sleep(2000);
-//                driver.switchTo().alert().accept();
-
-            act.sendKeys(Keys.ENTER);
+                driver.switchTo().alert().accept();
 
             } else act.sendKeys(Keys.ENTER);
-//                driver.switchTo().alert().accept();
-
     }
 
     public void CreateChanel(WebDriver driver) throws InterruptedIOException, InterruptedException {
         Thread.sleep(3000);
         driver.navigate().to(MagentoChanel);
         InvisibilityExplicit(driver,".//*[@id='loading']");
-        ClickableExplicitXpath(driver, ".//*[@id='content-holder']/div[1]/div/span[2]");
+        PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[1]/div/span[2]");
         ClickableExplicitXpath(driver, ".//*[@id='channelLogoContainer']/li[1]/img");
 
         driver.findElement(By.xpath(".//*[@id='channelName']")).clear();

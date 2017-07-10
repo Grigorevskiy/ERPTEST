@@ -2,6 +2,7 @@ package Test;
 import BaseTest.BaseTest;
 import Methods.EasyERP.BalanceSheet;
 import Methods.EasyERP.CreatingOrder;
+import Methods.EasyERP.LogOut;
 import Methods.EasyERP.LoginEasyErp;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -9,6 +10,7 @@ import java.io.InterruptedIOException;
 
 import static BaseTest.Waits.WaitsMethod.ClickableExplicitXpath;
 import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
+import static BaseTest.Waits.WaitsMethod.PresentExplicitXpath;
 
 
 public class PurchaseOrder3 extends BaseTest {
@@ -39,7 +41,7 @@ public class PurchaseOrder3 extends BaseTest {
         ClickableExplicitXpath(driver,"//div/ul/li/button[4]");
         driver.navigate().to(URLorder);
         InvisibilityExplicit(driver,".//*[@id='loading']");
-        ClickableExplicitXpath(driver,".//*[@id='editButton']");
+        PresentExplicitXpath(driver,".//*[@id='editButton']");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='editButton']");
         InvisibilityExplicit(driver,".//*[@id='loading']");
@@ -58,6 +60,8 @@ public class PurchaseOrder3 extends BaseTest {
         ClickableExplicitXpath(driver,"//div/fieldset/div/ul/li[2]/ul/li[1]/a/span");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='create-payment-dialog']");
+        LogOut logOut = new LogOut();
+        logOut.logout(driver);
     }
 
     @Test(priority=2)

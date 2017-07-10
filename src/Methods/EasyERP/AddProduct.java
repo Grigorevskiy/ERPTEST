@@ -23,21 +23,20 @@ public class AddProduct {
         ClickableExplicitXpath(driver,".//*[@id='top-bar-createBtn']");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-        driver.findElement(By.xpath(".//*[@id='product']")).clear();
+        ClickableExplicitXpath(driver,".//*[@id='product']");
         driver.findElement(By.xpath(".//*[@id='product']")).sendKeys("MacBook");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath("//div[1]/div[1]/div/div[2]/div[2]/label[1]/span")).click();
         driver.findElement(By.xpath(".//*[@id='SKU']")).clear();
         driver.findElement(By.xpath(".//*[@id='SKU']")).sendKeys("000123");
         driver.findElement(By.xpath(".//*[@id='showBtn']")).click();
-        driver.findElement(By.xpath(".//*[@id='productCategories']/li[5]/label[1]/span")).click();
+        ClickableExplicitXpath(driver,".//*[@id='productCategories']/li[5]/label[1]/span");
         driver.findElement(By.xpath(".//*[@id='linkProduct']")).click();
         InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath(".//*[@id='listTable']/tr[1]/td[3]")).click();
 //CreateList
         InvisibilityExplicit(driver,"//*[@id='loading']");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,".//*[@id='createEmployeeForm']/ul/li[4]/a");
         driver.findElement(By.xpath("//div/div/div[1]/div/dl[1]/div[2]/dd/input")).clear();
         driver.findElement(By.xpath("//div/div/div[1]/div/dl[1]/div[2]/dd/input")).sendKeys("10");

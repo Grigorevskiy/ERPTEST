@@ -2,6 +2,7 @@ package Test;
 import BaseTest.BaseTest;
 import Methods.EasyERP.BalanceSheet;
 import Methods.EasyERP.CreatingOrder;
+import Methods.EasyERP.LogOut;
 import Methods.EasyERP.LoginEasyErp;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -90,6 +91,8 @@ public class PurchaseOrder2 extends BaseTest {
         ClickableExplicitXpath(driver,".//*[@id='listTable']/tr[1]/td[2]");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='formContent']/div/fieldset/div/ul/li/button[4]");
+        LogOut logOut = new LogOut();
+        logOut.logout(driver);
     }
 
     @Test(priority=2)

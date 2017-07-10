@@ -2,6 +2,7 @@ package Test;
 import BaseTest.BaseTest;
 import Methods.EasyERP.BalanceSheet;
 import Methods.EasyERP.CreatingOrder;
+import Methods.EasyERP.LogOut;
 import Methods.EasyERP.LoginEasyErp;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -80,17 +81,16 @@ public class PurchaseOrder extends BaseTest{
         ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/li[4]/ul/li[1]/a/span[1]");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath(".//*[@id='goodsInNotesSaveBtn']")).click();
-
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver, "//div[2]/div/fieldset/div[1]/ul/button");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/button[2]");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         ClickableExplicitXpath(driver,"//div[2]/table/tbody/tr[1]/td[2]");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,"//div/fieldset/div/ul/li/button[4]");
+        LogOut logOut = new LogOut();
+        logOut.logout(driver);
     }
 
     @Test(priority=2)

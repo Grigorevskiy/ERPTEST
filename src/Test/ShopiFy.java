@@ -21,7 +21,7 @@ public class ShopiFy  extends BaseTest {
         driver.findElement(By.xpath("//input[@id='']")).sendKeys("V");
         driver.findElement(By.id("product_search_input")).clear();
         driver.findElement(By.id("product_search_input")).sendKeys("Vinsic");
-        driver.findElement(By.xpath(".//*[@id='product_picker_modal']/div[3]/div/ul/li/div/div/div[3]")).click();
+        driver.findElement(By.xpath(".//*[@id='product_checkbox_11317448516']")).click();
         driver.findElement(By.id("add-products")).click();
         Thread.sleep(2000);
                 JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -38,7 +38,6 @@ public class ShopiFy  extends BaseTest {
         driver.navigate().to("https://live.easyerp.com/#easyErp/integrations/shopify");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,"html/body/div[4]/div[4]/div[2]/div[1]/div/span[1]");
-//        driver.findElement(By.xpath("html/body/div[4]/div[4]/div[2]/div[1]/div/span[1]")).click();
         String ordresValue = driver.findElement(By.xpath(".//*[@id='content-holder']/div[2]/div/div[4]/div[2]/div[2]/span")).getText();
         int waitTo = 0;
         do{

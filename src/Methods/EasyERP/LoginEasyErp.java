@@ -9,7 +9,8 @@ import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
 public class LoginEasyErp {
     public void login (WebDriver driver, String email, String pass) throws InterruptedIOException, InterruptedException {
         driver.navigate().to("https://live.easyerp.com/#login");
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         InvisibilityExplicit(driver,".//*[@id='loading']");
 
         driver.findElement(By.name("ulogin")).clear();
@@ -17,7 +18,6 @@ public class LoginEasyErp {
         driver.findElement(By.id("upass")).clear();
         driver.findElement(By.id("upass")).sendKeys("vitya9595");
         InvisibilityExplicit(driver,".//*[@id='loading']");
-
         driver.findElement(By.id("loginTrigger")).click();
     }
 }

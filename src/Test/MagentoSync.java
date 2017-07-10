@@ -1,10 +1,12 @@
 package Test;
 import BaseTest.BaseTest;
 import Methods.EasyERP.AddProduct;
+import Methods.EasyERP.LogOut;
 import Methods.Magento.ChanelMagento;
 import Methods.EasyERP.LoginEasyErp;
 import Methods.Magento.LoginMagento;
 import Methods.Magento.MagentoCreateOrderAndCustomer;
+import Methods.Magento.SignOut;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -25,6 +27,8 @@ public class MagentoSync extends BaseTest {
         driver.findElement(By.xpath("//div[4]/table/thead/tr/th[1]/div/label")).click();
         driver.findElement(By.xpath(".//*[@id='container']/div/div[2]/div[2]/div[1]/div/button")).click();
         driver.findElement(By.xpath("//div[2]/div[1]/div/ul/li[1]/span")).click();
+        SignOut signOut = new SignOut();
+        signOut.singOut(driver);
     }
 
     @Test(priority = 2)
@@ -33,6 +37,8 @@ public class MagentoSync extends BaseTest {
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         AddProduct addProduct = new AddProduct();
         addProduct.AddProductERP(driver);
+        LogOut logOut = new LogOut();
+        logOut.logout(driver);
     }
 
     @Test(priority = 3)
@@ -41,6 +47,8 @@ public class MagentoSync extends BaseTest {
         loginMagento.login(driver, "admin", "admin123456");
         MagentoCreateOrderAndCustomer magentoCreateOrder = new MagentoCreateOrderAndCustomer();
         magentoCreateOrder.CreateOrder(driver);
+        SignOut signOut = new SignOut();
+        signOut.singOut(driver);
     }
 
     @Test(priority = 4)
@@ -49,8 +57,9 @@ public class MagentoSync extends BaseTest {
         loginMagento.login(driver, "admin", "admin123456");
         MagentoCreateOrderAndCustomer magentoCreateOrder = new MagentoCreateOrderAndCustomer();
         magentoCreateOrder.CreateOrder(driver);
-
         PresentExplicitXpath(driver,".//*[@id='order-view-hold-button']");
+        SignOut signOut = new SignOut();
+        signOut.singOut(driver);
     }
 
     @Test(priority = 5)
@@ -59,13 +68,13 @@ public class MagentoSync extends BaseTest {
         loginMagento.login(driver, "admin", "admin123456");
         MagentoCreateOrderAndCustomer magentoCreateOrder = new MagentoCreateOrderAndCustomer();
         magentoCreateOrder.CreateOrder(driver);
-
         PresentExplicitXpath(driver,".//*[@id='order_invoice']");
         ClickableExplicitXpath(driver,".//div/button[@title='Submit Invoice']");
-
         WebElement element = driver.findElement(By.xpath(".//*[@id='messages']/div/div/div"));
         String strng = element.getText();
         Assert.assertEquals("The invoice has been created.", strng);
+        SignOut signOut = new SignOut();
+        signOut.singOut(driver);
     }
 
     @Test(priority = 6)
@@ -74,6 +83,8 @@ public class MagentoSync extends BaseTest {
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         ChanelMagento chanelMagento = new ChanelMagento();
         chanelMagento.DeleteChanel(driver);
+        LogOut logOut = new LogOut();
+        logOut.logout(driver);
     }
 
     @Test(priority = 7)
@@ -82,6 +93,8 @@ public class MagentoSync extends BaseTest {
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         ChanelMagento chanelMagento = new ChanelMagento();
         chanelMagento.CreateChanel(driver);
+        LogOut logOut = new LogOut();
+        logOut.logout(driver);
     }
 
     @Test(priority = 8)
@@ -90,32 +103,37 @@ public class MagentoSync extends BaseTest {
         loginMagento.login(driver, "admin", "admin123456");
         MagentoCreateOrderAndCustomer magentoCreateOrder = new MagentoCreateOrderAndCustomer();
         magentoCreateOrder.CreateOrder(driver);
+        SignOut signOut = new SignOut();
+        signOut.singOut(driver);
+        Thread.sleep(1000);
     }
 
     @Test(priority = 9)
     public void CreateOrderAndCustomerMagentoSecond2() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
-
         MagentoCreateOrderAndCustomer magentoCreateOrder = new MagentoCreateOrderAndCustomer();
         magentoCreateOrder.CreateOrder(driver);
         PresentExplicitXpath(driver,".//*[@id='order-view-hold-button']");
+        SignOut signOut = new SignOut();
+        signOut.singOut(driver);
+        Thread.sleep(1000);
     }
 
     @Test(priority = 10)
     public void CreateOrderAndCustomerMagentoSecond3() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
-
         MagentoCreateOrderAndCustomer magentoCreateOrder = new MagentoCreateOrderAndCustomer();
         magentoCreateOrder.CreateOrder(driver);
-
         PresentExplicitXpath(driver,".//*[@id='order_invoice']");
         ClickableExplicitXpath(driver,".//div/button[@title='Submit Invoice']");
-
         WebElement element = driver.findElement(By.xpath(".//*[@id='messages']/div/div/div"));
         String str1 = element.getText();
         Assert.assertEquals("The invoice has been created.", str1);
+        SignOut signOut = new SignOut();
+        signOut.singOut(driver);
+        Thread.sleep(1000);
     }
 }
 

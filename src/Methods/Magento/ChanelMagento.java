@@ -113,6 +113,7 @@ Thread.sleep(3000);
         InvisibilityExplicit(driver,".//*[@id='loading']");
 
         ClickableExplicitXpath(driver,".//*[@id='content-holder']/div[2]/div/div[1]/div[1]/div/div");
+        ClickableExplicitXpath(driver,".//*[@id='content-holder']/div[1]/div/span[1]");
 
     }
 }

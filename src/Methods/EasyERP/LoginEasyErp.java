@@ -8,6 +8,8 @@ import static BaseTest.Waits.WaitsMethod.InvisibilityExplicit;
 
 public class LoginEasyErp {
     public void login (WebDriver driver, String email, String pass) throws InterruptedIOException, InterruptedException {
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+
         driver.navigate().to("https://live.easyerp.com/#login");
 //        Thread.sleep(3000);
         InvisibilityExplicit(driver,".//*[@id='loading']");

@@ -21,7 +21,6 @@ public class MagentoCreateOrderAndCustomer {
         PresentExplicitXpath(driver,".//*[@class='action-default scalable primary'][contains(@title, 'Create New Customer')]");
         InvisibilityExplicit(driver,".//*[@id='container']/div/div[1]");
         ClickableExplicitXpath(driver,".//*[@id='order-items']/div[1]/div/button");
-//        driver.findElement(By.xpath(".//*[@id='order-items']/div[1]/div/button")).click();
         JavascriptExecutor jsDown = (JavascriptExecutor) driver;
         jsDown.executeScript("scroll(0,400);");
         PresentExplicitXpath(driver,".//*[@id='sales_order_create_search_grid_table']/tbody/tr[9]/td[2]");

@@ -11,7 +11,6 @@ import static BaseTest.Waits.WaitsMethod.PresentExplicitXpath;
 public class CreatingOrder {
     public void CreateOrder(WebDriver driver) throws InterruptedException, InterruptedIOException {
         driver.navigate().to("https://live.easyerp.com/#easyErp/purchaseOrders/list");
-
         Thread.sleep(4000);
         InvisibilityExplicit(driver,".//*[@id='loading']");
 
@@ -42,9 +41,6 @@ public class CreatingOrder {
 
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,"//div/table/tbody/tr[3]/td[1]/div/div/a");
-
-//        InvisibilityExplicit(driver,".//*[@id='loading']");
-//        ClickableExplicitXpath(driver,".//*[@id='content']/ul/li[11]/a[2]");
 
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='5898663372c8e19c34cd6919']/b");

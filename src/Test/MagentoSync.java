@@ -82,7 +82,7 @@ public class MagentoSync extends BaseTest {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
         ChanelMagento chanelMagento = new ChanelMagento();
-        chanelMagento.Test(driver);
+        chanelMagento.DeleteChanel(driver);
         LogOut logOut = new LogOut();
         logOut.logout(driver);
     }

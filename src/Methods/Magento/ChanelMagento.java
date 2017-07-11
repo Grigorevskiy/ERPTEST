@@ -15,7 +15,7 @@ import static org.openqa.selenium.Keys.ENTER;
 public class ChanelMagento {
     String MagentoChanel = "https://live.easyerp.com/#easyErp/integrations/magento";
 
-    public void DeleteChanel(WebDriver driver) throws InterruptedException, InterruptedIOException {
+    public void test1(WebDriver driver) throws InterruptedException, InterruptedIOException {
         Thread.sleep(3000);
         driver.navigate().to(MagentoChanel);
         InvisibilityExplicit(driver, ".//*[@id='loading']");
@@ -97,55 +97,54 @@ public class ChanelMagento {
             } else driver.switchTo().alert().accept();
         }
 
-
-
-
-    public void Test (WebDriver driver) throws InterruptedException, InterruptedIOException {
-        Thread.sleep(3000);
-        driver.navigate().to(MagentoChanel);
+    public void DeleteChanel (WebDriver driver) throws InterruptedException, InterruptedIOException {
+//        driver.navigate().to(MagentoChanel);
         InvisibilityExplicit(driver, ".//*[@id='loading']");
-        Thread.sleep(2000);
-        ClickableExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]/span");
+        ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[4]/i");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
+        ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[4]/div/ul/li[3]/a");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
+        PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]");
         InvisibilityExplicit(driver, ".//*[@id='loading']");
         PresentExplicitXpath(driver, ".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]");
-        Thread.sleep(2000);
 
         List<WebElement> element = driver.findElements(By.xpath(".//*[@id='ui-id-3']/button"));
         if (element.size() > 0) {
             InvisibilityExplicit(driver, ".//*[@id='loading']");
             ClickableExplicitXpath(driver, ".//*[@id='ui-id-3']/button");
             InvisibilityExplicit(driver, ".//*[@id='loading']");
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
             ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[1]");
             PresentExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[2]");
             InvisibilityExplicit(driver, ".//*[@id='loading']");
-            Thread.sleep(2000);
-
 
             List<WebElement> CountButton = driver.findElements(By.xpath(".//*[@id='listTable']/tr/td[3]/a[2]"));
-//            String CountButtons = driver.findElement(By.xpath(".//*[@id='listTable']/tr/td[3]/a[2]")).getText();
-//            if (CountButton.size() > 0) {
-//                ClickableExplicitXpath(driver, ".//*[@id='listTable']/tr[1]/td[3]/a[2]");
-//                InvisibilityExplicit(driver, ".//*[@id='loading']");
-
 //                int waitTo = 0;
-                do{
-//                   if (0 < CountButton.size()){
-                        ClickableExplicitXpath(driver, ".//*[@id='listTable']/tr[1]/td[3]/a[2]");
+            if (CountButton.size() > 0){
+                do {
+                    ClickableExplicitXpath(driver, ".//*[@id='listTable']/tr[1]/td[3]/a[2]");
+                    InvisibilityExplicit(driver, ".//*[@id='loading']");
+
+                    if (driver.findElements(By.xpath(".//*[@id='buildProduct']")).size() > 0) {
+                        ClickableExplicitXpath(driver, ".//*[@id='buildProduct']");
+                        InvisibilityExplicit(driver, ".//*[@id='loading']");
+                        driver.findElement(By.xpath(".//*[@id='name']")).clear();
+                        driver.findElement(By.xpath(".//*[@id='name']")).sendKeys("efwe");
+                        driver.findElement(By.xpath(".//*[@id='sku']")).clear();
+                        driver.findElement(By.xpath(".//*[@id='sku']")).sendKeys("ewfwe");
+                        ClickableExplicitXpath(driver, ".//*[@id='buildProduct']");
                         InvisibilityExplicit(driver, ".//*[@id='loading']");
 
-                    if (driver.findElements(By.xpath(".//*[@id='ui-id-3']/button")).size() > 0){
-                        ClickableExplicitXpath(driver, ".//*[@id='buildProduct']");
-                InvisibilityExplicit(driver, ".//*[@id='loading']");
-                    }else
+                    } else
                         InvisibilityExplicit(driver, ".//*[@id='loading']");
                     driver.findElement(By.xpath(".//*[@id='resolve-saveBtn']"));
-                } while(0== CountButton.size());
+                } while (0 == CountButton.size());
 
-
-
-                Thread.sleep(2000);
+        }else
+            ClickableExplicitXpath(driver,".//*[@id='resolve-saveBtn']");
+            Thread.sleep(3000);
             InvisibilityExplicit(driver, ".//*[@id='loading']");
             driver.navigate().to(MagentoChanel);
             InvisibilityExplicit(driver, ".//*[@id='loading']");
@@ -154,14 +153,6 @@ public class ChanelMagento {
             PresentExplicitXpath(driver, ".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]");
             Thread.sleep(2000);
             driver.switchTo().alert().accept();
-
-//            else if (driver.findElements(By.xpath(".//*[@id='ui-id-3']/button")).size() > 0) {
-//                ClickableExplicitXpath(driver, ".//*[@id='buildProduct']");
-//                InvisibilityExplicit(driver, ".//*[@id='loading']");
-
-//            } else
-//                InvisibilityExplicit(driver, ".//*[@id='loading']");
-//            driver.findElement(By.xpath(".//*[@id='resolve-saveBtn']"));
 
         } else driver.switchTo().alert().accept();
     }
@@ -206,6 +197,5 @@ public class ChanelMagento {
 
         ClickableExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[1]/div/div");
         ClickableExplicitXpath(driver, ".//*[@id='content-holder']/div[1]/div/span[1]");
-
     }
 }

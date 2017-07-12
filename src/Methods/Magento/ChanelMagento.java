@@ -103,6 +103,7 @@ public class ChanelMagento {
         ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[4]/i");
         InvisibilityExplicit(driver, ".//*[@id='loading']");
         InvisibilityExplicit(driver, ".//*[@id='loading']");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[4]/div/ul/li[3]/a");
         InvisibilityExplicit(driver, ".//*[@id='loading']");
         PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]");

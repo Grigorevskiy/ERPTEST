@@ -106,7 +106,7 @@ public class ChanelMagento {
         InvisibilityExplicit(driver, ".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[4]/div/ul/li[3]/a");
         InvisibilityExplicit(driver, ".//*[@id='loading']");
-        PresentExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]");
+        ClickableExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]");
         InvisibilityExplicit(driver, ".//*[@id='loading']");
         PresentExplicitXpath(driver, ".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]");
 
@@ -122,11 +122,17 @@ public class ChanelMagento {
             InvisibilityExplicit(driver, ".//*[@id='loading']");
 
             List<WebElement> CountButton = driver.findElements(By.xpath(".//*[@id='listTable']/tr/td[3]/a[2]"));
-//                int waitTo = 0;
+                int waitTo = 1;
             if (CountButton.size() > 0){
+
                 do {
                     ClickableExplicitXpath(driver, ".//*[@id='listTable']/tr[1]/td[3]/a[2]");
                     InvisibilityExplicit(driver, ".//*[@id='loading']");
+
+
+                    waitTo = 0;
+
+//                } while (CountButton.size() == 0) ;
 
                     if (driver.findElements(By.xpath(".//*[@id='buildProduct']")).size() > 0) {
                         ClickableExplicitXpath(driver, ".//*[@id='buildProduct']");
@@ -135,15 +141,19 @@ public class ChanelMagento {
                         driver.findElement(By.xpath(".//*[@id='name']")).sendKeys("efwe");
                         driver.findElement(By.xpath(".//*[@id='sku']")).clear();
                         driver.findElement(By.xpath(".//*[@id='sku']")).sendKeys("ewfwe");
+                        InvisibilityExplicit(driver, ".//*[@id='loading']");
+                        Thread.sleep(4000);
                         ClickableExplicitXpath(driver, ".//*[@id='buildProduct']");
                         InvisibilityExplicit(driver, ".//*[@id='loading']");
 
                     } else
                         InvisibilityExplicit(driver, ".//*[@id='loading']");
                     driver.findElement(By.xpath(".//*[@id='resolve-saveBtn']"));
-                } while (0 == CountButton.size());
+//                } while (0 == CountButton.size());
+                }  while(waitTo==0);
 
         }else
+            Thread.sleep(4000);
             ClickableExplicitXpath(driver,".//*[@id='resolve-saveBtn']");
             Thread.sleep(3000);
             InvisibilityExplicit(driver, ".//*[@id='loading']");

@@ -51,33 +51,7 @@ public class MagentoSync extends BaseTest {
         signOut.singOut(driver);
     }
 
-//    @Test(priority = 4)
-//    public void CreateOrderAndCustomerMagento2() throws InterruptedException, InterruptedIOException {
-//        LoginMagento loginMagento = new LoginMagento();
-//        loginMagento.login(driver, "admin", "admin123456");
-//        MagentoCreateOrderAndCustomer magentoCreateOrder = new MagentoCreateOrderAndCustomer();
-//        magentoCreateOrder.CreateOrder(driver);
-//        PresentExplicitXpath(driver,".//*[@id='order-view-hold-button']");
-//        SignOut signOut = new SignOut();
-//        signOut.singOut(driver);
-//    }
-//
-//    @Test(priority = 5)
-//    public void CreateOrderAndCustomerMagento3() throws InterruptedException, InterruptedIOException {
-//        LoginMagento loginMagento = new LoginMagento();
-//        loginMagento.login(driver, "admin", "admin123456");
-//        MagentoCreateOrderAndCustomer magentoCreateOrder = new MagentoCreateOrderAndCustomer();
-//        magentoCreateOrder.CreateOrder(driver);
-//        PresentExplicitXpath(driver,".//*[@id='order_invoice']");
-//        ClickableExplicitXpath(driver,".//div/button[@title='Submit Invoice']");
-//        WebElement element = driver.findElement(By.xpath(".//*[@id='messages']/div/div/div"));
-//        String strng = element.getText();
-//        Assert.assertEquals("The invoice has been created.", strng);
-//        SignOut signOut = new SignOut();
-//        signOut.singOut(driver);
-//    }
-
-    @Test(priority = 6)
+    @Test(priority = 4)
     public void DeleteChanelMagento() throws InterruptedException, InterruptedIOException {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
@@ -87,7 +61,7 @@ public class MagentoSync extends BaseTest {
         logOut.logout(driver);
     }
 
-    @Test(priority = 7)
+    @Test(priority = 5)
     public void CreateMagentoChannel() throws InterruptedException, InterruptedIOException {
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");
@@ -97,7 +71,7 @@ public class MagentoSync extends BaseTest {
         logOut.logout(driver);
     }
 
-    @Test(priority = 8)
+    @Test(priority = 6)
     public void CreateOrderAndCustomerMagentoSecond1() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
@@ -108,7 +82,7 @@ public class MagentoSync extends BaseTest {
         Thread.sleep(1000);
     }
 
-    @Test(priority = 9)
+    @Test(priority = 7)
     public void CreateOrderAndCustomerMagentoSecond2() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
@@ -120,7 +94,7 @@ public class MagentoSync extends BaseTest {
         Thread.sleep(1000);
     }
 
-    @Test(priority = 10)
+    @Test(priority = 8)
     public void CreateOrderAndCustomerMagentoSecond3() throws InterruptedException, InterruptedIOException {
         LoginMagento loginMagento = new LoginMagento();
         loginMagento.login(driver, "admin", "admin123456");
@@ -136,7 +110,7 @@ public class MagentoSync extends BaseTest {
         Thread.sleep(1000);
     }
 
-    @Test(priority = 11)
+    @Test(priority = 9)
     public void Sync() throws InterruptedException, InterruptedIOException{
         LoginEasyErp loginEasyErp = new LoginEasyErp();
         loginEasyErp.login(driver, "grigorevskiiy@gmail.com", "vitya9595");

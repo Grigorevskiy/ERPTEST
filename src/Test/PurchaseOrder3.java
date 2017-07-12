@@ -34,6 +34,7 @@ public class PurchaseOrder3 extends BaseTest {
         ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/button");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         //Approve
+        Thread.sleep(2000);
         ClickableExplicitXpath(driver,".//*[@id='listTable']/tr[1]/td[2]");
         InvisibilityExplicit(driver,".//*[@id='loading']");
 
@@ -41,9 +42,11 @@ public class PurchaseOrder3 extends BaseTest {
         ClickableExplicitXpath(driver,"//div/ul/li/button[4]");
         driver.navigate().to(URLorder);
         InvisibilityExplicit(driver,".//*[@id='loading']");
-        PresentExplicitXpath(driver,".//*[@id='editButton']");
-        InvisibilityExplicit(driver,".//*[@id='loading']");
+        Thread.sleep(2000);
         ClickableExplicitXpath(driver,".//*[@id='editButton']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
+//        ClickableExplicitXpath(driver,".//*[@id='editButton']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul[1]/li[3]/span");
         InvisibilityExplicit(driver,".//*[@id='loading']");

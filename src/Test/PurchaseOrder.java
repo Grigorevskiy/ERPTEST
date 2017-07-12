@@ -86,6 +86,7 @@ public class PurchaseOrder extends BaseTest{
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='formContent']/div/div/div[1]/div/ul/button[2]");
         InvisibilityExplicit(driver,".//*[@id='loading']");
+        Thread.sleep(2000);
         ClickableExplicitXpath(driver,"//div[2]/table/tbody/tr[1]/td[2]");
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,"//div/fieldset/div/ul/li/button[4]");

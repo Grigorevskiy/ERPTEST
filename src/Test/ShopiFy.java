@@ -4,10 +4,11 @@ import Methods.EasyERP.LoginEasyErp;
 import Methods.Login.LoginShopify;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.io.InterruptedIOException;
-
 import static BaseTest.Waits.WaitsMethod.*;
+
 
 
 public class ShopiFy  extends BaseTest {

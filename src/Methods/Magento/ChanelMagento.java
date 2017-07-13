@@ -130,7 +130,7 @@ public class ChanelMagento {
                     InvisibilityExplicit(driver, ".//*[@id='loading']");
 
 
-                    waitTo = 0;
+//                    waitTo = 0;
 
 //                } while (CountButton.size() == 0) ;
 
@@ -148,7 +148,9 @@ public class ChanelMagento {
 
                     } else
                         InvisibilityExplicit(driver, ".//*[@id='loading']");
-                    driver.findElement(By.xpath(".//*[@id='resolve-saveBtn']"));
+                        driver.findElement(By.xpath(".//*[@id='resolve-saveBtn']"));
+                        waitTo = 0;
+
 //                } while (0 == CountButton.size());
                 }  while(waitTo==0);
 

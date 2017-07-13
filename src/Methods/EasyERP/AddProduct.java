@@ -15,6 +15,7 @@ public class AddProduct {
         InvisibilityExplicit(driver,".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[7]/div/ul/li[2]/a");
         InvisibilityExplicit(driver,".//*[@id='loading']");
+        InvisibilityExplicit(driver,".//*[@id='loading']");
         driver.findElement(By.xpath(".//*[@id='submenuHolder']/nav/ul/li[7]/div/ul/li[2]/a")).click();
         InvisibilityExplicit(driver,".//*[@id='loading']");
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.io.InterruptedIOException;
 import java.sql.Driver;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static BaseTest.Waits.WaitsMethod.*;
 import static org.openqa.selenium.Keys.ENTER;
@@ -116,13 +117,17 @@ public class ChanelMagento {
             ClickableExplicitXpath(driver, ".//*[@id='ui-id-3']/button");
             InvisibilityExplicit(driver, ".//*[@id='loading']");
             Thread.sleep(2000);
+
+
+
+
             ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
             ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[1]");
             PresentExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[2]");
             InvisibilityExplicit(driver, ".//*[@id='loading']");
 
             List<WebElement> CountButton = driver.findElements(By.xpath(".//*[@id='listTable']/tr/td[3]/a[2]"));
-                int waitTo = 1;
+//                int waitTo = 1;
             if (CountButton.size() > 0){
 
                 do {
@@ -149,10 +154,10 @@ public class ChanelMagento {
                     } else
                         InvisibilityExplicit(driver, ".//*[@id='loading']");
                         driver.findElement(By.xpath(".//*[@id='resolve-saveBtn']"));
-                        waitTo = 0;
+//                        waitTo = 0;
 
-//                } while (0 == CountButton.size());
-                }  while(waitTo==0);
+                } while (0 == CountButton.size());
+//                }  while(waitTo==0);
 
         }else
             Thread.sleep(4000);

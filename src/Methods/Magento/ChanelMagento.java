@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 
 import java.io.InterruptedIOException;
 import java.sql.Driver;
@@ -117,18 +118,17 @@ public class ChanelMagento {
             ClickableExplicitXpath(driver, ".//*[@id='ui-id-3']/button");
             InvisibilityExplicit(driver, ".//*[@id='loading']");
             Thread.sleep(2000);
-
-
-
-
             ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
             ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[1]");
             PresentExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[2]");
             InvisibilityExplicit(driver, ".//*[@id='loading']");
 
+
+
+
             List<WebElement> CountButton = driver.findElements(By.xpath(".//*[@id='listTable']/tr/td[3]/a[2]"));
 //                int waitTo = 1;
-            if (CountButton.size() > 0){
+            if (CountButton.size() > 0) {
 
                 do {
                     ClickableExplicitXpath(driver, ".//*[@id='listTable']/tr[1]/td[3]/a[2]");
@@ -153,13 +153,13 @@ public class ChanelMagento {
 
                     } else
                         InvisibilityExplicit(driver, ".//*[@id='loading']");
-                        driver.findElement(By.xpath(".//*[@id='resolve-saveBtn']"));
+                    driver.findElement(By.xpath(".//*[@id='resolve-saveBtn']"));
 //                        waitTo = 0;
 
                 } while (0 == CountButton.size());
 //                }  while(waitTo==0);
 
-        }else
+            }else
             Thread.sleep(4000);
             ClickableExplicitXpath(driver,".//*[@id='resolve-saveBtn']");
             Thread.sleep(3000);
@@ -174,7 +174,6 @@ public class ChanelMagento {
 
         } else driver.switchTo().alert().accept();
     }
-
 
     public void CreateChanel(WebDriver driver) throws InterruptedIOException, InterruptedException {
         Thread.sleep(3000);

@@ -108,9 +108,13 @@ public class ChanelMagento {
         InvisibilityExplicit(driver, ".//*[@id='loading']");
         ClickableExplicitXpath(driver,".//*[@id='submenuHolder']/nav/ul/li[4]/div/ul/li[3]/a");
         InvisibilityExplicit(driver, ".//*[@id='loading']");
+        InvisibilityExplicit(driver, ".//*[@id='loading']");
         ClickableExplicitXpath(driver, ".//*[@id='content-holder']/div[2]/div/div[1]/div[2]");
         InvisibilityExplicit(driver, ".//*[@id='loading']");
         PresentExplicitXpath(driver, ".//*[@id='dialogContainer']/div[2]/div[3]/div/button[3]");
+
+
+
 
         List<WebElement> element = driver.findElements(By.xpath(".//*[@id='ui-id-3']/button"));
         if (element.size() > 0) {
@@ -118,6 +122,10 @@ public class ChanelMagento {
             ClickableExplicitXpath(driver, ".//*[@id='ui-id-3']/button");
             InvisibilityExplicit(driver, ".//*[@id='loading']");
             Thread.sleep(2000);
+
+
+
+
             ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[1]/label/span");
             ClickableExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[1]");
             PresentExplicitXpath(driver, ".//*[@id='conflictBlock']/div/table/thead/tr/th[2]/div/div/div[2]");
@@ -127,17 +135,12 @@ public class ChanelMagento {
 
 
             List<WebElement> CountButton = driver.findElements(By.xpath(".//*[@id='listTable']/tr/td[3]/a[2]"));
-//                int waitTo = 1;
+            int waitTo  =0;
             if (CountButton.size() > 0) {
 
                 do {
                     ClickableExplicitXpath(driver, ".//*[@id='listTable']/tr[1]/td[3]/a[2]");
                     InvisibilityExplicit(driver, ".//*[@id='loading']");
-
-
-//                    waitTo = 0;
-
-//                } while (CountButton.size() == 0) ;
 
                     if (driver.findElements(By.xpath(".//*[@id='buildProduct']")).size() > 0) {
                         ClickableExplicitXpath(driver, ".//*[@id='buildProduct']");
@@ -153,11 +156,11 @@ public class ChanelMagento {
 
                     } else
                         InvisibilityExplicit(driver, ".//*[@id='loading']");
-                    driver.findElement(By.xpath(".//*[@id='resolve-saveBtn']"));
-//                        waitTo = 0;
+                    ClickableExplicitXpath(driver,(".//*[@id='resolve-saveBtn']"));
+                        waitTo = 0;
 
-                } while (0 == CountButton.size());
-//                }  while(waitTo==0);
+//                } while (0 == CountButton.size());
+                }  while(waitTo == 0);
 
             }else
             Thread.sleep(4000);

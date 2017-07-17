@@ -49,8 +49,7 @@ public class ShopiFy  extends BaseTest {
                 Thread.sleep(5000);
                 driver.navigate().refresh();
             }
-        }
-        while(waitTo==0);
+        }while(waitTo==0);
     }
 }
 
